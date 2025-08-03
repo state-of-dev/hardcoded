@@ -844,7 +844,7 @@ export default function LunchBoxLanding() {
                 <article className="relative">
                   <div className="absolute -top-5 md:-top-10 -right-5 md:-right-10 w-20 md:w-40 h-20 md:h-40 rounded-full bg-gradient-to-r from-cyan-500/5 to-blue-500/5 dark:from-cyan-500/10 dark:to-blue-500/10 blur-3xl" />
                   <div className="mb-8 md:mb-12 w-16 md:w-20 h-16 md:h-20 rounded-2xl md:rounded-3xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:to-blue-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center shadow-sm">
-                    <Zap className="w-8 md:w-10 h-8 md:h-10 text-cyan-600 dark:text-cyan-400" />
+                    <Layers className="w-8 md:w-10 h-8 md:h-10 text-cyan-600 dark:text-cyan-400" />
                   </div>
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white">
                     Presencia Digital Completa
@@ -922,7 +922,7 @@ export default function LunchBoxLanding() {
                 <article className="relative">
                   <div className="absolute -bottom-5 md:-bottom-10 -right-5 md:-right-10 w-20 md:w-40 h-20 md:h-40 rounded-full bg-gradient-to-r from-orange-500/5 to-red-500/5 dark:from-orange-500/10 dark:to-red-500/10 blur-3xl" />
                   <div className="mb-8 md:mb-12 w-16 md:w-20 h-16 md:h-20 rounded-2xl md:rounded-3xl bg-gradient-to-r from-orange-500/10 to-red-500/10 dark:from-orange-500/20 dark:to-red-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center shadow-sm">
-                    <div className="w-8 md:w-10 h-8 md:h-10 rounded-xl bg-gradient-to-r from-orange-500 to-red-500" />
+                    <Zap className="w-8 md:w-10 h-8 md:h-10 text-orange-500" />
                   </div>
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white">
                     Entrega Garantizada
