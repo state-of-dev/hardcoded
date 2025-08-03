@@ -780,7 +780,7 @@ export default function LunchBoxLanding() {
         </section>
 
         {/* Decision Helper Section */}
-        <section className="py-24 md:py-32 relative bg-gray-50/50 dark:bg-gray-900/50" data-section="decision">
+        <section className="py-24 md:py-32 relative" data-section="decision">
           <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16">
             <div className={`text-center mb-16 md:mb-20 animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`}>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
