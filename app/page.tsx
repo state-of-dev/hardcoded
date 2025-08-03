@@ -228,7 +228,7 @@ export default function LunchBoxLanding() {
         .animate-fade-in-up {
           opacity: 0;
           transform: translate3d(0, 30px, 0);
-          transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+          transition: opacity 0.15s ease-out, transform 0.15s ease-out;
           will-change: opacity, transform;
         }
 
@@ -240,7 +240,7 @@ export default function LunchBoxLanding() {
         .animate-fade-in-left {
           opacity: 0;
           transform: translate3d(-30px, 0, 0);
-          transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+          transition: opacity 0.15s ease-out, transform 0.15s ease-out;
           will-change: opacity, transform;
         }
 
@@ -252,7 +252,7 @@ export default function LunchBoxLanding() {
         .animate-fade-in-right {
           opacity: 0;
           transform: translate3d(30px, 0, 0);
-          transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+          transition: opacity 0.15s ease-out, transform 0.15s ease-out;
           will-change: opacity, transform;
         }
 
@@ -264,7 +264,7 @@ export default function LunchBoxLanding() {
         .animate-scale-in {
           opacity: 0;
           transform: scale3d(0.95, 0.95, 1);
-          transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+          transition: opacity 0.15s ease-out, transform 0.15s ease-out;
           will-change: opacity, transform;
         }
 
@@ -275,12 +275,18 @@ export default function LunchBoxLanding() {
 
         .animate-fade-in {
           opacity: 0;
-          transition: opacity 0.4s ease-out;
+          transition: opacity 0.15s ease-out;
           will-change: opacity;
         }
 
         .animate-fade-in.visible {
           opacity: 1;
+        }
+
+        /* Fix select options text color in dark mode */
+        .dark select#project-type option {
+          color: black !important;
+          background-color: white !important;
         }
 
         /* Staggered animations for children */
@@ -1213,7 +1219,7 @@ export default function LunchBoxLanding() {
                         id="project-type"
                         name="project-type"
                         required
-                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                        className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base h-[49.6px]"
                       >
                         <option value="">Selecciona una opción</option>
                         <option value="empresarial">Sitio Web Empresarial ($6,000)</option>
