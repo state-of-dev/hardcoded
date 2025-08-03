@@ -403,7 +403,7 @@ export default function LunchBoxLanding() {
 
             <h1 className="text-[3rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] font-bold leading-[0.85] tracking-tighter mb-6 md:mb-8 lg:mb-12 group cursor-default">
               <span className="block text-gray-900 dark:text-white group-hover:tracking-wide transition-all duration-500">
-                85% de tus clientes
+                tus clientes
               </span>
               <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400 bg-clip-text text-transparent group-hover:tracking-wide transition-all duration-500">
                 te buscan online primero
@@ -574,7 +574,7 @@ export default function LunchBoxLanding() {
                     </div>
 
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">
-                      Sitio Web Empresarial
+                      Presencia Digital Profesional
                     </h3>
 
                     <div className="flex items-baseline gap-2 mb-4 sm:mb-6">
@@ -686,7 +686,7 @@ export default function LunchBoxLanding() {
                     </div>
 
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">
-                      Tienda en Línea
+                      Tienda Online Completa
                     </h3>
 
                     <div className="flex items-baseline gap-2 mb-4 sm:mb-6">
@@ -817,7 +817,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-green-800 dark:text-green-300">SERVICIOS</p>
                       </div>
                       <p className="text-sm text-green-700 dark:text-green-400">Consultas, reparaciones, asesorías</p>
-                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
+                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital Profesional</p>
                     </div>
                     <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
                       <div className="flex items-center gap-2 mb-2">
@@ -825,7 +825,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-blue-800 dark:text-blue-300">PRODUCTOS</p>
                       </div>
                       <p className="text-sm text-blue-700 dark:text-blue-400">Cosas que se compran y llevan</p>
-                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
+                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online Completa</p>
                     </div>
                   </div>
                 </div>
@@ -856,7 +856,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-green-800 dark:text-green-300">EN PERSONA</p>
                       </div>
                       <p className="text-sm text-green-700 dark:text-green-400">Efectivo o transferencia</p>
-                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
+                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital Profesional</p>
                     </div>
                     <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
                       <div className="flex items-center gap-2 mb-2">
@@ -864,7 +864,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-blue-800 dark:text-blue-300">ONLINE</p>
                       </div>
                       <p className="text-sm text-blue-700 dark:text-blue-400">Tarjeta, PayPal, apps</p>
-                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
+                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online Completa</p>
                     </div>
                   </div>
                 </div>
@@ -895,7 +895,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-green-800 dark:text-green-300">PREFIERO QUE ME CONTACTEN</p>
                       </div>
                       <p className="text-sm text-green-700 dark:text-green-400">Para dar cotización personalizada</p>
-                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
+                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital Profesional</p>
                     </div>
                     <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
                       <div className="flex items-center gap-2 mb-2">
@@ -903,7 +903,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-blue-800 dark:text-blue-300">SÍ, PRECIOS FIJOS</p>
                       </div>
                       <p className="text-sm text-blue-700 dark:text-blue-400">Que compren sin hablarme</p>
-                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
+                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online Completa</p>
                     </div>
                   </div>
                 </div>
@@ -1367,8 +1367,8 @@ export default function LunchBoxLanding() {
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base h-[49.6px]"
                       >
                         <option value="">Selecciona una opción</option>
-                        <option value="empresarial">Sitio Web Empresarial ($6,000)</option>
-                        <option value="ecommerce">Tienda en Línea ($11,000)</option>
+                        <option value="empresarial">Presencia Digital Profesional ($6,000)</option>
+                        <option value="ecommerce">Tienda Online Completa ($11,000)</option>
                         <option value="asesoria">No estoy seguro, necesito asesoría</option>
                       </select>
                     </div>
