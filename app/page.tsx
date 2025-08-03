@@ -403,16 +403,15 @@ export default function LunchBoxLanding() {
 
             <h1 className="text-[3rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] font-bold leading-[0.85] tracking-tighter mb-6 md:mb-8 lg:mb-12 group cursor-default">
               <span className="block text-gray-900 dark:text-white group-hover:tracking-wide transition-all duration-500">
-                sitios web
+                85% de tus clientes
               </span>
               <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400 bg-clip-text text-transparent group-hover:tracking-wide transition-all duration-500">
-                profesionales
+                te buscan online primero
               </span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-700 dark:text-white/80 mb-8 md:mb-12 lg:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-4">
-              Impulsa tu negocio con un sitio web optimizado que convierte visitantes en clientes. Soluciones digitales
-              estructuradas para resultados rápidos y profesionales.
+              ¿Apareces cuando te buscan? Diseñamos presencia digital que genera confianza real y convierte visitantes en clientes. Sin esperas largas, sin precios exorbitantes.
             </p>
 
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-500 dark:via-pink-500 dark:to-cyan-500 p-[1px] rounded-full group hover:scale-105 transition-all duration-300 hover:shadow-xl">
@@ -776,6 +775,152 @@ export default function LunchBoxLanding() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Decision Helper Section */}
+        <section className="py-24 md:py-32 relative bg-gray-50/50 dark:bg-gray-900/50" data-section="decision">
+          <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16">
+            <div className={`text-center mb-16 md:mb-20 animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+                Te ayudamos a decidir
+              </h2>
+              <p className="text-lg md:text-xl text-gray-700 dark:text-white/70 leading-relaxed max-w-3xl mx-auto">
+                3 preguntas simples para saber exactamente qué necesita tu negocio
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16 md:mb-20">
+              {/* Pregunta 1 */}
+              <div className={`relative group animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.1s" }}>
+                <div className="absolute -top-5 -right-5 w-24 h-24 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 blur-2xl group-hover:blur-xl transition-all duration-500" />
+                <div className="relative text-center">
+                  <div className="mb-6 md:mb-8">
+                    <div className="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 dark:from-purple-500/20 dark:to-pink-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center mb-6 shadow-sm group-hover:shadow-lg group-hover:scale-105 transition-all duration-500">
+                      <FileText className="w-8 h-8 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center shadow-sm">
+                        <span className="text-sm font-bold text-white">1</span>
+                      </div>
+                      <div className="h-px w-8 bg-gradient-to-r from-purple-600 to-pink-600"></div>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+                      ¿Qué vendes?
+                    </h3>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700/30 group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Grid3X3 className="w-4 h-4 text-green-600" />
+                        <p className="font-medium text-green-800 dark:text-green-300">SERVICIOS</p>
+                      </div>
+                      <p className="text-sm text-green-700 dark:text-green-400">Consultas, reparaciones, asesorías</p>
+                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
+                    </div>
+                    <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Infinity className="w-4 h-4 text-blue-600" />
+                        <p className="font-medium text-blue-800 dark:text-blue-300">PRODUCTOS</p>
+                      </div>
+                      <p className="text-sm text-blue-700 dark:text-blue-400">Cosas que se compran y llevan</p>
+                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pregunta 2 */}
+              <div className={`relative group animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.2s" }}>
+                <div className="absolute -top-5 -right-5 w-24 h-24 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 blur-2xl group-hover:blur-xl transition-all duration-500" />
+                <div className="relative text-center">
+                  <div className="mb-6 md:mb-8">
+                    <div className="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:to-blue-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center mb-6 shadow-sm group-hover:shadow-lg group-hover:scale-105 transition-all duration-500">
+                      <Zap className="w-8 h-8 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 flex items-center justify-center shadow-sm">
+                        <span className="text-sm font-bold text-white">2</span>
+                      </div>
+                      <div className="h-px w-8 bg-gradient-to-r from-cyan-600 to-blue-600"></div>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
+                      ¿Cómo te pagan?
+                    </h3>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700/30 group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Grid3X3 className="w-4 h-4 text-green-600" />
+                        <p className="font-medium text-green-800 dark:text-green-300">EN PERSONA</p>
+                      </div>
+                      <p className="text-sm text-green-700 dark:text-green-400">Efectivo o transferencia</p>
+                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
+                    </div>
+                    <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Infinity className="w-4 h-4 text-blue-600" />
+                        <p className="font-medium text-blue-800 dark:text-blue-300">ONLINE</p>
+                      </div>
+                      <p className="text-sm text-blue-700 dark:text-blue-400">Tarjeta, PayPal, apps</p>
+                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pregunta 3 */}
+              <div className={`relative group animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.3s" }}>
+                <div className="absolute -top-5 -right-5 w-24 h-24 rounded-full bg-gradient-to-r from-orange-500/10 to-red-500/10 blur-2xl group-hover:blur-xl transition-all duration-500" />
+                <div className="relative text-center">
+                  <div className="mb-6 md:mb-8">
+                    <div className="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-r from-orange-500/10 to-red-500/10 dark:from-orange-500/20 dark:to-red-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center mb-6 shadow-sm group-hover:shadow-lg group-hover:scale-105 transition-all duration-500">
+                      <ImageIcon className="w-8 h-8 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-orange-600 to-red-600 flex items-center justify-center shadow-sm">
+                        <span className="text-sm font-bold text-white">3</span>
+                      </div>
+                      <div className="h-px w-8 bg-gradient-to-r from-orange-600 to-red-600"></div>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
+                      ¿Mostrar precios?
+                    </h3>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700/30 group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Grid3X3 className="w-4 h-4 text-green-600" />
+                        <p className="font-medium text-green-800 dark:text-green-300">PREFIERO QUE ME CONTACTEN</p>
+                      </div>
+                      <p className="text-sm text-green-700 dark:text-green-400">Para dar cotización personalizada</p>
+                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
+                    </div>
+                    <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Infinity className="w-4 h-4 text-blue-600" />
+                        <p className="font-medium text-blue-800 dark:text-blue-300">SÍ, PRECIOS FIJOS</p>
+                      </div>
+                      <p className="text-sm text-blue-700 dark:text-blue-400">Que compren sin hablarme</p>
+                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            {/* CTA */}
+            <div className={`text-center mt-12 md:mt-16 animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.5s" }}>
+              <Button
+                onClick={() => scrollToSection("contact-form")}
+                size="lg"
+                className="rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                ¿Aún no estás seguro? Solicita asesoría personalizada
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </div>
           </div>
         </section>
