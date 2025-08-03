@@ -68,10 +68,7 @@ function useScrollAnimation() {
 export default function LunchBoxLanding() {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [scrollY, setScrollY] = useState(0)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHoveringDesignElement, setIsHoveringDesignElement] = useState(false)
-  const scrollRef = useRef<NodeJS.Timeout | null>(null)
-  const mouseRef = useRef<NodeJS.Timeout | null>(null)
 
   const visibleSections = useScrollAnimation()
 
@@ -107,43 +104,27 @@ export default function LunchBoxLanding() {
     }
   }, [])
 
-  // Handle scroll for morphing animation with debounce
+  // Optimized scroll handler using requestAnimationFrame
   useEffect(() => {
-    const handleScroll = () => {
-      if (scrollRef.current) {
-        clearTimeout(scrollRef.current)
-      }
+    let ticking = false
 
-      scrollRef.current = setTimeout(() => {
-        setScrollY(window.scrollY)
-      }, 10) // Small debounce for smoother performance
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrollY(window.scrollY)
+          ticking = false
+        })
+        ticking = true
+      }
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => {
-      if (scrollRef.current) clearTimeout(scrollRef.current)
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
 
-  // Track mouse position for magnetic effects with debounce
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (mouseRef.current) {
-        clearTimeout(mouseRef.current)
-      }
-
-      mouseRef.current = setTimeout(() => {
-        setMousePosition({ x: e.clientX, y: e.clientY })
-      }, 10) // Small debounce for smoother performance
-    }
-
-    window.addEventListener("mousemove", handleMouseMove, { passive: true })
-    return () => {
-      if (mouseRef.current) clearTimeout(mouseRef.current)
-      window.removeEventListener("mousemove", handleMouseMove)
-    }
-  }, [])
+  // Removed mouse tracking for better performance
 
   // Función para scroll suave a secciones
   const scrollToSection = (sectionId: string) => {
@@ -181,37 +162,19 @@ export default function LunchBoxLanding() {
     console.log("🎨 Tema cambiado manualmente a:", newTheme ? "dark" : "light")
   }
 
-  // Calculate morphing progress based on scroll - simplified
+  // Ultra-optimized morphing progress - minimal calculations
   const getShapeProgress = () => {
-    if (typeof window === "undefined") return { borderRadius: "50%", rotation: "0deg" }
+    if (typeof window === "undefined" || scrollY === 0) return { borderRadius: "50%", rotation: "0deg" }
 
-    const windowHeight = window.innerHeight
-    const totalScrollHeight = document.documentElement.scrollHeight - windowHeight
+    // Simplified single calculation
+    const progress = Math.min(scrollY / 2000, 1) // Fixed threshold for consistent performance
+    const radius = 50 - (progress * 25) // Smooth transition from 50% to 25%
+    const angle = progress * 15 // Reduced rotation for subtlety
 
-    // Avoid division by zero
-    if (totalScrollHeight <= 0) return { borderRadius: "50%", rotation: "0deg" }
-
-    // First transition: circle to square (0% to 40% of scroll)
-    const firstTransition = Math.min(scrollY / (totalScrollHeight * 0.4), 1)
-
-    // Second transition: square back to circle (60% to 100% of scroll)
-    const secondTransitionStart = totalScrollHeight * 0.6
-    const secondTransition = Math.max(0, Math.min((scrollY - secondTransitionStart) / (totalScrollHeight * 0.4), 1))
-
-    // Calculate border radius
-    let borderRadius = "50%"
-    if (secondTransition > 0) {
-      // Morphing back to circle
-      borderRadius = `${secondTransition * 50}%`
-    } else {
-      // Morphing to square
-      borderRadius = `${(1 - firstTransition) * 50}%`
+    return { 
+      borderRadius: `${radius}%`, 
+      rotation: `${angle}deg` 
     }
-
-    // Calculate rotation - simplified
-    const rotation = `${firstTransition * 20 - secondTransition * 20}deg`
-
-    return { borderRadius, rotation }
   }
 
   const { borderRadius, rotation } = getShapeProgress()
@@ -261,54 +224,59 @@ export default function LunchBoxLanding() {
           will-change: transform;
         }
 
-        /* Scroll-triggered animations */
+        /* Optimized scroll-triggered animations - GPU accelerated */
         .animate-fade-in-up {
           opacity: 0;
-          transform: translateY(60px);
-          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transform: translate3d(0, 30px, 0);
+          transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+          will-change: opacity, transform;
         }
 
         .animate-fade-in-up.visible {
           opacity: 1;
-          transform: translateY(0);
+          transform: translate3d(0, 0, 0);
         }
 
         .animate-fade-in-left {
           opacity: 0;
-          transform: translateX(-60px);
-          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transform: translate3d(-30px, 0, 0);
+          transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+          will-change: opacity, transform;
         }
 
         .animate-fade-in-left.visible {
           opacity: 1;
-          transform: translateX(0);
+          transform: translate3d(0, 0, 0);
         }
 
         .animate-fade-in-right {
           opacity: 0;
-          transform: translateX(60px);
-          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transform: translate3d(30px, 0, 0);
+          transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+          will-change: opacity, transform;
         }
 
         .animate-fade-in-right.visible {
           opacity: 1;
-          transform: translateX(0);
+          transform: translate3d(0, 0, 0);
         }
 
         .animate-scale-in {
           opacity: 0;
-          transform: scale(0.8);
-          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transform: scale3d(0.95, 0.95, 1);
+          transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+          will-change: opacity, transform;
         }
 
         .animate-scale-in.visible {
           opacity: 1;
-          transform: scale(1);
+          transform: scale3d(1, 1, 1);
         }
 
         .animate-fade-in {
           opacity: 0;
-          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: opacity 0.4s ease-out;
+          will-change: opacity;
         }
 
         .animate-fade-in.visible {

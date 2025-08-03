@@ -4,9 +4,24 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'HARDCODED - Sitios Web Profesionales para PyMEs',
+  description: 'Impulsa tu negocio con un sitio web optimizado que convierte visitantes en clientes. Desarrollo web profesional para empresas de servicios con entrega en 15 días.',
+  keywords: 'desarrollo web, sitios web profesionales, PyMEs, páginas web empresariales, tiendas en línea, HARDCODED',
+  authors: [{ name: 'HARDCODED Agency' }],
+  creator: 'HARDCODED Agency',
+  publisher: 'HARDCODED Agency',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'HARDCODED - Sitios Web Profesionales para PyMEs',
+    description: 'Impulsa tu negocio con un sitio web optimizado que convierte visitantes en clientes',
+    type: 'website',
+    locale: 'es_MX',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'HARDCODED - Sitios Web Profesionales para PyMEs',
+    description: 'Impulsa tu negocio con un sitio web optimizado que convierte visitantes en clientes',
+  },
 }
 
 export default function RootLayout({
@@ -15,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <style>{`
 html {
