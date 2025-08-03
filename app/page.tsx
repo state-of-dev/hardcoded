@@ -585,8 +585,7 @@ export default function LunchBoxLanding() {
                     </div>
 
                     <p className="text-sm sm:text-base text-gray-700 dark:text-white/70 mb-6 sm:mb-8 leading-relaxed flex-1">
-                      Perfecto para empresas de servicios, consultorios, restaurantes y negocios que necesitan presencia
-                      digital profesional.
+                      <strong>Para negocios que venden SERVICIOS.</strong> Genera confianza, aparece en Google y convierte visitantes en citas. Ideal para consultorios, talleres, restaurantes y empresas de servicios.
                     </p>
 
                     <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-1">
@@ -697,8 +696,7 @@ export default function LunchBoxLanding() {
                     </div>
 
                     <p className="text-sm sm:text-base text-gray-700 dark:text-white/70 mb-4 sm:mb-6 leading-relaxed">
-                      Ideal para tiendas, boutiques, distribuidoras y negocios que quieren vender productos online con
-                      sistema completo.
+                      <strong>Para negocios que venden PRODUCTOS.</strong> Automatiza ventas 24/7 con carrito, pagos seguros y control de inventario. Incluye todo lo del paquete anterior MÁS e-commerce profesional.
                     </p>
 
                     <div className="mb-4 sm:mb-6">
