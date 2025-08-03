@@ -403,10 +403,10 @@ export default function LunchBoxLanding() {
 
             <h1 className="text-[3rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] font-bold leading-[0.85] tracking-tighter mb-6 md:mb-8 lg:mb-12 group cursor-default">
               <span className="block text-gray-900 dark:text-white group-hover:tracking-wide transition-all duration-500">
-                tus clientes
+                Tus clientes te
               </span>
               <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400 bg-clip-text text-transparent group-hover:tracking-wide transition-all duration-500">
-                te buscan online primero
+                buscan online primero
               </span>
             </h1>
 
@@ -585,7 +585,8 @@ export default function LunchBoxLanding() {
                     </div>
 
                     <p className="text-sm sm:text-base text-gray-700 dark:text-white/70 mb-6 sm:mb-8 leading-relaxed flex-1">
-                      <strong>Para negocios que venden SERVICIOS.</strong> Genera confianza, aparece en Google y convierte visitantes en citas. Ideal para consultorios, talleres, restaurantes y empresas de servicios.
+                      Perfecto para empresas de servicios, consultorios, restaurantes y negocios que necesitan presencia
+                      digital profesional.
                     </p>
 
                     <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-1">
@@ -696,7 +697,8 @@ export default function LunchBoxLanding() {
                     </div>
 
                     <p className="text-sm sm:text-base text-gray-700 dark:text-white/70 mb-4 sm:mb-6 leading-relaxed">
-                      <strong>Para negocios que venden PRODUCTOS.</strong> Automatiza ventas 24/7 con carrito, pagos seguros y control de inventario. Incluye todo lo del paquete anterior MÁS e-commerce profesional.
+                      Ideal para tiendas, boutiques, distribuidoras y negocios que quieren vender productos online con
+                      sistema completo.
                     </p>
 
                     <div className="mb-4 sm:mb-6">
@@ -815,7 +817,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-green-800 dark:text-green-300">SERVICIOS</p>
                       </div>
                       <p className="text-sm text-green-700 dark:text-green-400">Consultas, reparaciones, asesorías</p>
-                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital Profesional</p>
+                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
                     </div>
                     <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
                       <div className="flex items-center gap-2 mb-2">
@@ -823,7 +825,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-blue-800 dark:text-blue-300">PRODUCTOS</p>
                       </div>
                       <p className="text-sm text-blue-700 dark:text-blue-400">Cosas que se compran y llevan</p>
-                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online Completa</p>
+                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
                     </div>
                   </div>
                 </div>
@@ -854,7 +856,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-green-800 dark:text-green-300">EN PERSONA</p>
                       </div>
                       <p className="text-sm text-green-700 dark:text-green-400">Efectivo o transferencia</p>
-                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital Profesional</p>
+                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
                     </div>
                     <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
                       <div className="flex items-center gap-2 mb-2">
@@ -862,7 +864,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-blue-800 dark:text-blue-300">ONLINE</p>
                       </div>
                       <p className="text-sm text-blue-700 dark:text-blue-400">Tarjeta, PayPal, apps</p>
-                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online Completa</p>
+                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
                     </div>
                   </div>
                 </div>
@@ -893,7 +895,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-green-800 dark:text-green-300">PREFIERO QUE ME CONTACTEN</p>
                       </div>
                       <p className="text-sm text-green-700 dark:text-green-400">Para dar cotización personalizada</p>
-                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital Profesional</p>
+                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
                     </div>
                     <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
                       <div className="flex items-center gap-2 mb-2">
@@ -901,7 +903,7 @@ export default function LunchBoxLanding() {
                         <p className="font-medium text-blue-800 dark:text-blue-300">SÍ, PRECIOS FIJOS</p>
                       </div>
                       <p className="text-sm text-blue-700 dark:text-blue-400">Que compren sin hablarme</p>
-                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online Completa</p>
+                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
                     </div>
                   </div>
                 </div>
