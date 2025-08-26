@@ -71,6 +71,16 @@ export default function LunchBoxLanding() {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [scrollY, setScrollY] = useState(0)
   const [isHoveringDesignElement, setIsHoveringDesignElement] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState<string>("")
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    message: ""
+  })
 
   const visibleSections = useScrollAnimation()
 
@@ -151,6 +161,50 @@ export default function LunchBoxLanding() {
           }
         }, 500) // Pequeño delay para asegurar que el scroll termine
       }
+    }
+  }
+
+  // Manejar cambios en el formulario
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  // Manejar envío del formulario
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitMessage("")
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitMessage(data.message)
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "",
+          message: ""
+        })
+      } else {
+        setSubmitMessage(data.error || "Error al enviar el mensaje")
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      setSubmitMessage("Error al enviar el mensaje. Por favor, inténtalo de nuevo.")
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -1303,7 +1357,7 @@ export default function LunchBoxLanding() {
               <div className="absolute -bottom-5 sm:-bottom-10 -right-5 sm:-right-10 w-20 sm:w-40 h-20 sm:h-40 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20 blur-3xl" />
 
               <div className="relative bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg">
-                <form className="space-y-4 sm:space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-white/80 mb-2">
@@ -1314,6 +1368,8 @@ export default function LunchBoxLanding() {
                         id="name"
                         name="name"
                         required
+                        value={formData.name}
+                        onChange={handleInputChange}
                         placeholder="Tu nombre"
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                       />
@@ -1331,6 +1387,8 @@ export default function LunchBoxLanding() {
                         id="email"
                         name="email"
                         required
+                        value={formData.email}
+                        onChange={handleInputChange}
                         placeholder="correo@ejemplo.com"
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                       />
@@ -1350,6 +1408,8 @@ export default function LunchBoxLanding() {
                         id="phone"
                         name="phone"
                         required
+                        value={formData.phone}
+                        onChange={handleInputChange}
                         placeholder="55 1234 5678"
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                       />
@@ -1364,8 +1424,10 @@ export default function LunchBoxLanding() {
                       </label>
                       <select
                         id="project-type"
-                        name="project-type"
+                        name="service"
                         required
+                        value={formData.service}
+                        onChange={handleInputChange}
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base h-[49.6px]"
                       >
                         <option value="">Selecciona una opción</option>
@@ -1388,6 +1450,8 @@ export default function LunchBoxLanding() {
                       name="message"
                       rows={4}
                       required
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder="Describe brevemente tu empresa y qué necesitas..."
                       className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none text-sm sm:text-base"
                     />
@@ -1396,11 +1460,22 @@ export default function LunchBoxLanding() {
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
                     <Button
                       type="submit"
-                      className="flex-1 bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-white/90 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                      disabled={isSubmitting}
+                      className="flex-1 bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-white/90 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
-                      Solicitar Cotización
+                      {isSubmitting ? "Enviando..." : "Solicitar Cotización"}
                     </Button>
                   </div>
+
+                  {submitMessage && (
+                    <div className={`text-center py-3 px-4 rounded-lg ${
+                      submitMessage.includes('Error') 
+                        ? 'bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-800/40' 
+                        : 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800/40'
+                    }`}>
+                      <p className="text-sm sm:text-base font-medium">{submitMessage}</p>
+                    </div>
+                  )}
 
                   <div className="text-center pt-2 sm:pt-4">
                     <p className="text-xs sm:text-sm text-gray-600 dark:text-white/60">
