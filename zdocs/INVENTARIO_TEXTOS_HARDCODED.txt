@@ -1,0 +1,180 @@
+📝 INVENTARIO COMPLETO DE TEXTOS - SITIO WEB HARDCODED
+===========================================================
+
+🏷️ NAVEGACIÓN
+--------------
+- "Paquetes" (botón nav)
+- "Cotizar" (botón nav)
+
+🎯 HERO SECTION
+---------------
+Badge: "Presencia Digital & Tienda Online"
+
+Headline Principal:
+"85% de tus clientes te buscan online primero"
+
+Subtitle:
+"¿Apareces cuando te buscan? Creamos **Presencia Digital Profesional** y **Tienda Online Completa** que convierten visitantes en clientes."
+
+CTAs:
+- "Ver Presencia Digital"
+- "Ver Tienda Online" 
+- "¿No estás seguro? Solicita asesoría gratuita"
+
+🎨 SHOWCASE SECTION
+-------------------
+Headline: "Especializados en Presencia Digital"
+
+Copy:
+"Dos soluciones poderosas: **Presencia Digital Profesional** para empresas de servicios y **Tienda Online Completa** para venta de productos."
+
+Tagline: "$6,000 Presencia Digital • $11,000 Tienda Online"
+
+Elementos Bento Grid:
+- "Presencia Profesional"
+- "Optimizado SEO"
+- "Rápido"
+- "Escalable"  
+- "Tienda Online"
+- "Seguro"
+
+💰 PRICING SECTION
+------------------
+Headline: "Soluciones Perfectas"
+
+Subtitle:
+"Soluciones web profesionales diseñadas para impulsar tu negocio. Elige el paquete perfecto para tus necesidades."
+
+PAQUETE 1 - Presencia Digital Profesional:
+Badge: "Más Popular"
+Precio: "$6,000 MXN"
+Descripción: "Perfecto para empresas de servicios, consultorios, restaurantes y negocios que necesitan presencia digital profesional."
+
+Características:
+- "Página de inicio profesional"
+- "Página de servicios detallada"
+- "Sección 'Sobre nosotros'"
+- "Página de contacto avanzada"
+- "Mapa de ubicación integrado"
+- "Galería de imágenes optimizada"
+- "Formularios de contacto"
+- "Optimización SEO básica"
+- "Diseño responsivo premium"
+- "Hosting por 1 año incluido"
+- "Certificado SSL gratuito"
+- "Soporte técnico 3 meses"
+
+CTA: "Elegir Presencia Digital"
+
+PAQUETE 2 - Tienda Online Completa:
+Badge: "Funcional"
+Precio: "$11,000 MXN"
+Descripción: "Ideal para tiendas, boutiques, distribuidoras y negocios que quieren vender productos online con sistema completo."
+
+Características:
+- "Catálogo de productos ilimitado"
+- "Carrito de compras avanzado"  
+- "Pasarela de pagos segura"
+- "Panel de administración"
+- "Control de inventario"
+- "Gestión de pedidos"
+- "Sistema de cupones"
+- "Múltiples métodos de pago"
+- "Calculadora de envíos"
+- "Reportes de ventas"
+- "Optimización SEO completa"
+- "Hosting por 1 año incluido"
+
+CTA: "Elegir Tienda Online"
+
+🤔 DECISION SECTION ("Te ayudamos a decidir")
+--------------------------------------------
+Headline: "Te ayudamos a decidir"
+Subtitle: "3 preguntas simples para saber exactamente qué necesita tu negocio"
+
+PREGUNTA 1: "¿Qué tipo de negocio tienes?"
+Respuestas:
+- "Consultas, reparaciones, asesorías" → Presencia Digital
+- "Cosas que se compran y llevan" → Tienda Online
+
+PREGUNTA 2: "¿Cómo quieres que paguen?"
+Respuestas:
+- "Efectivo o transferencia" → Presencia Digital
+- "Tarjeta, PayPal, apps" → Tienda Online
+
+PREGUNTA 3: "¿Cuál es tu objetivo principal?"
+Respuestas:
+- "Para dar cotización personalizada" → Presencia Digital  
+- "Que compren sin hablarme" → Tienda Online
+
+✨ FEATURES SECTION
+------------------
+Headline: "Funcionalidades incluidas"
+Subtitle: "Todo lo que tu sitio web necesita para funcionar correctamente y generar resultados desde el primer día."
+
+FEATURE 1 - Presencia Digital Profesional:
+"Mapa de ubicación, galería multimedia y todas las secciones necesarias para mostrar tu negocio profesionalmente."
+CTA: "Ver Presencia Digital - $6,000"
+
+FEATURE 2 - Soluciones Escalables:
+"Desde Presencia Digital Profesional hasta Tienda Online Completa. Elige el paquete que mejor se adapte a tus necesidades actuales."
+CTA: "Ver Nuestros Paquetes"
+
+FEATURE 3 - Tienda Online Completa:
+"Carrito de compras, pagos seguros, control de inventario y panel administrativo. Todo lo que necesitas para vender online."
+CTA: "Ver Tienda Online - $11,000"
+
+🔧 PROCESS SECTION
+------------------
+Headline: "Proceso Simple y Rápido"
+
+PASO 1: "Planeación & Estrategia"
+"Conversamos sobre tu proyecto y definimos los objetivos de tu sitio web."
+
+PASO 2: "Desarrollo & Diseño"  
+"Creamos tu sitio web con diseño personalizado y todas las funcionalidades que necesitas."
+
+PASO 3: "Lanzamiento & Entrega"
+"Coordinamos detalles y publicamos tu sitio web."
+
+📞 CONTACT FORM
+---------------
+Headline: "¿Listo para empezar?"
+Subtitle: "Cuéntanos sobre tu proyecto y te ayudamos a elegir la mejor solución."
+
+Campos:
+- "Tu nombre *"
+- "Tu email *"  
+- "Tu teléfono *"
+- "Nombre de tu negocio *"
+
+Dropdown "Tipo de proyecto *":
+- "Selecciona una opción"
+- "Presencia Digital Profesional ($6,000)"
+- "Tienda Online Completa ($11,000)" 
+- "No estoy seguro, necesito asesoría"
+
+- "Cuéntanos más sobre tu proyecto *"
+
+CTA: "Enviar Solicitud"
+
+Disclaimer: "Al enviar este formulario, aceptas recibir comunicación de HARDCODED sobre tu proyecto."
+
+🎈 FLOATING BADGE (aparece en scroll)
+------------------------------------
+Header: "Nuestros Productos"
+
+Botones:
+- "Presencia Digital - $6,000"
+- "Tienda Online - $11,000"
+
+CTA: "Cotizar Ahora"
+
+===========================================================
+ANÁLISIS GENERAL:
+- Enfoque claro en 2 productos principales
+- Precios transparentes y visibles
+- Lenguaje directo y orientado a resultados
+- CTAs específicos por producto
+- Flujo que guía hacia cotización
+===========================================================

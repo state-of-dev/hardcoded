@@ -15,10 +15,11 @@ import {
   Layers,
   Infinity,
   Zap,
+  ShoppingCart,
 } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 
-// Custom hook for scroll-triggered animations
+// Custom hook for scroll-triggered animations (one-way only)
 function useScrollAnimation() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set())
   const observerRef = useRef<IntersectionObserver | null>(null)
@@ -28,13 +29,14 @@ function useScrollAnimation() {
       (entries) => {
         entries.forEach((entry) => {
           const sectionId = entry.target.getAttribute("data-section")
-          if (sectionId) {
+          if (sectionId && entry.isIntersecting) {
             setVisibleSections((prev) => {
               const newSet = new Set(prev)
-              if (entry.isIntersecting) {
-                newSet.add(sectionId)
-              } else {
-                newSet.delete(sectionId)
+              // Only add, never remove - one-way animations
+              newSet.add(sectionId)
+              // Stop observing this section once it's animated
+              if (observerRef.current) {
+                observerRef.current.unobserve(entry.target)
               }
               return newSet
             })
@@ -42,8 +44,8 @@ function useScrollAnimation() {
         })
       },
       {
-        threshold: 0.1,
-        rootMargin: "-10% 0px -10% 0px",
+        threshold: 0.15,
+        rootMargin: "25% 0px -25% 0px",
       },
     )
 
@@ -224,61 +226,20 @@ export default function LunchBoxLanding() {
           will-change: transform;
         }
 
-        /* Optimized scroll-triggered animations - GPU accelerated */
-        .animate-fade-in-up {
-          opacity: 0;
-          transform: translate3d(0, 30px, 0);
-          transition: opacity 0.15s ease-out, transform 0.15s ease-out;
-          will-change: opacity, transform;
-        }
-
-        .animate-fade-in-up.visible {
-          opacity: 1;
-          transform: translate3d(0, 0, 0);
-        }
-
-        .animate-fade-in-left {
-          opacity: 0;
-          transform: translate3d(-30px, 0, 0);
-          transition: opacity 0.15s ease-out, transform 0.15s ease-out;
-          will-change: opacity, transform;
-        }
-
-        .animate-fade-in-left.visible {
-          opacity: 1;
-          transform: translate3d(0, 0, 0);
-        }
-
-        .animate-fade-in-right {
-          opacity: 0;
-          transform: translate3d(30px, 0, 0);
-          transition: opacity 0.15s ease-out, transform 0.15s ease-out;
-          will-change: opacity, transform;
-        }
-
-        .animate-fade-in-right.visible {
-          opacity: 1;
-          transform: translate3d(0, 0, 0);
-        }
-
-        .animate-scale-in {
-          opacity: 0;
-          transform: scale3d(0.95, 0.95, 1);
-          transition: opacity 0.15s ease-out, transform 0.15s ease-out;
-          will-change: opacity, transform;
-        }
-
-        .animate-scale-in.visible {
-          opacity: 1;
-          transform: scale3d(1, 1, 1);
-        }
-
+        /* Simple fade-in animations */
+        .animate-fade-in-up, 
+        .animate-fade-in-left, 
+        .animate-fade-in-right, 
+        .animate-scale-in, 
         .animate-fade-in {
           opacity: 0;
-          transition: opacity 0.15s ease-out;
-          will-change: opacity;
+          transition: opacity 0.3s ease;
         }
 
+        .animate-fade-in-up.visible,
+        .animate-fade-in-left.visible,
+        .animate-fade-in-right.visible,
+        .animate-scale-in.visible,
         .animate-fade-in.visible {
           opacity: 1;
         }
@@ -398,7 +359,7 @@ export default function LunchBoxLanding() {
               className="inline-flex mb-6 md:mb-8 lg:mb-12 text-xs md:text-sm font-light border-gray-300 dark:border-white/20 text-gray-600 dark:text-white/80 px-3 md:px-4 py-1.5 md:py-2 items-center"
             >
               <Sparkles className="w-3 h-3 mr-2" />
-              Presencia digital
+              Presencia Digital & Tienda Online
             </Badge>
 
             <h1 className="text-[3rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] font-bold leading-[0.85] tracking-tighter mb-6 md:mb-8 lg:mb-12 group cursor-default">
@@ -406,21 +367,43 @@ export default function LunchBoxLanding() {
                 tus clientes
               </span>
               <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400 bg-clip-text text-transparent group-hover:tracking-wide transition-all duration-500">
-                te buscan online primero
+                te buscan en línea primero
               </span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-700 dark:text-white/80 mb-8 md:mb-12 lg:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-4">
-              ¿Apareces cuando te buscan? Diseñamos presencia digital que genera confianza real y convierte visitantes en clientes. Sin esperas largas, sin precios exorbitantes.
+              ¿Apareces cuando te buscan? Creamos <strong className="text-purple-600 dark:text-purple-400">Presencia Digital Profesional</strong> y <strong className="text-cyan-600 dark:text-cyan-400">Tienda Online Completa</strong> que convierten visitantes en clientes.
             </p>
 
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-500 dark:via-pink-500 dark:to-cyan-500 p-[1px] rounded-full group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-500 dark:to-pink-500 p-[1px] rounded-full group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                <Button
+                  className="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-sm sm:text-base md:text-lg group"
+                  onClick={() => scrollToSection("pricing")}
+                >
+                  Ver Presencia Digital
+                  <Layers className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </Button>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-500 dark:to-blue-500 p-[1px] rounded-full group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                <Button
+                  className="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-sm sm:text-base md:text-lg group"
+                  onClick={() => scrollToSection("pricing")}
+                >
+                  Ver Tienda Online
+                  <ShoppingCart className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </Button>
+              </div>
+            </div>
+            
+            <div className="mt-6 md:mt-8">
               <Button
-                className="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-base sm:text-lg md:text-xl group"
+                variant="ghost"
+                className="text-sm md:text-base text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 hover:no-underline transition-all duration-300"
                 onClick={() => scrollToContactForm()}
               >
-                Solicitar Cotización
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                ¿No estás seguro? Solicita asesoría gratuita
+                <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" />
               </Button>
             </div>
           </div>
@@ -444,13 +427,12 @@ export default function LunchBoxLanding() {
                   </span>
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/70 mb-6 md:mb-8 lg:mb-12 leading-relaxed max-w-2xl mx-auto xl:mx-0">
-                  Creamos sitios web estructurados y optimizados para empresas que buscan presencia digital efectiva.
-                  Cada proyecto incluye las herramientas esenciales que tu negocio necesita.
+                  Dos soluciones poderosas: <strong className="text-purple-600 dark:text-purple-400">Presencia Digital Profesional</strong> para empresas de servicios y <strong className="text-cyan-600 dark:text-cyan-400">Tienda Online Completa</strong> para venta de productos.
                 </p>
                 <div className="flex items-center justify-center xl:justify-start gap-4 md:gap-6 lg:gap-8">
                   <div className="w-12 sm:w-16 md:w-20 h-[2px] bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400" />
                   <p className="text-xs sm:text-sm md:text-base text-gray-500 dark:text-white/50">
-                    Perfecto para PyMEs que quieren resultados profesionales
+                    $6,000 Presencia Digital • $11,000 Tienda Online
                   </p>
                 </div>
               </div>
@@ -619,7 +601,7 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-purple-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Formularios de contacto inteligentes
+                          Formularios de contacto
                         </span>
                       </li>
                       <li className="flex items-center gap-3">
@@ -627,7 +609,7 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-purple-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Mapa de ubicación integrado
+                          Mapa de ubicación
                         </span>
                       </li>
                       <li className="flex items-center gap-3">
@@ -643,17 +625,17 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-purple-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Enlaces directos a WhatsApp
+                          Enlaces directos a Teléfono, Correo, WhatsApp.
                         </span>
                       </li>
-                      <li className="flex items-center gap-3">
+                      {/* <li className="flex items-center gap-3">
                         <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0">
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-purple-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
                           Hosting y dominio por 1 año
                         </span>
-                      </li>
+                      </li> */}
                     </ul>
 
                     <Button
@@ -703,7 +685,7 @@ export default function LunchBoxLanding() {
 
                     <div className="mb-4 sm:mb-6">
                       <p className="text-xs sm:text-sm font-medium text-cyan-600 dark:text-cyan-400 mb-3">
-                        Todo lo del paquete anterior PLUS:
+                        Todo lo del paquete anterior MÁS:
                       </p>
                     </div>
 
@@ -721,7 +703,7 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-cyan-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Carrito de compras funcional
+                          Carrito de compras
                         </span>
                       </li>
                       <li className="flex items-center gap-3">
@@ -753,17 +735,17 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-cyan-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Panel administrativo completo
+                          Panel administrativo
                         </span>
                       </li>
-                      <li className="flex items-center gap-3">
+                      {/* <li className="flex items-center gap-3">
                         <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-cyan-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
                           Sistema de cupones y descuentos
                         </span>
-                      </li>
+                      </li> */}
                     </ul>
 
                     <Button
@@ -1024,10 +1006,20 @@ export default function LunchBoxLanding() {
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white">
                     Soluciones Escalables
                   </h3>
-                  <p className="text-lg md:text-xl text-gray-700 dark:text-white/70 leading-relaxed mb-8 md:mb-12">
-                    Desde sitios informativos hasta tiendas completas. Elige el paquete que mejor se adapte a tus
+                  <p className="text-lg md:text-xl text-gray-700 dark:text-white/70 leading-relaxed mb-6 md:mb-8">
+                    Desde Presencia Digital Profesional hasta Tienda Online Completa. Elige el paquete que mejor se adapte a tus
                     necesidades actuales.
                   </p>
+                  <div className="mb-8 md:mb-12">
+                    <Button
+                      variant="outline"
+                      className="text-green-600 dark:text-green-400 border-green-200 dark:border-green-700 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-300"
+                      onClick={() => scrollToSection("pricing")}
+                    >
+                      <ArrowRight className="w-4 h-4 mr-2" />
+                      Ver Nuestros Paquetes
+                    </Button>
+                  </div>
                   <div className="relative h-32 md:h-40 overflow-hidden rounded-xl md:rounded-2xl bg-gradient-to-b from-green-500/10 via-emerald-500/10 to-transparent dark:from-green-500/15 dark:via-emerald-500/15 dark:to-transparent backdrop-blur-sm border border-green-200 dark:border-green-400/20 shadow-sm">
                     {/* Infinite bento grid extending downward */}
                     <div className="absolute inset-0 p-2 md:p-3">
@@ -1066,15 +1058,25 @@ export default function LunchBoxLanding() {
 
                 <article className="relative">
                   <div className="absolute -bottom-5 md:-bottom-10 -right-5 md:-right-10 w-20 md:w-40 h-20 md:h-40 rounded-full bg-gradient-to-r from-orange-500/5 to-red-500/5 dark:from-orange-500/10 dark:to-red-500/10 blur-3xl" />
-                  <div className="mb-8 md:mb-12 w-16 md:w-20 h-16 md:h-20 rounded-2xl md:rounded-3xl bg-gradient-to-r from-orange-500/10 to-red-500/10 dark:from-orange-500/20 dark:to-red-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center shadow-sm">
-                    <Zap className="w-8 md:w-10 h-8 md:h-10 text-orange-500" />
+                  <div className="mb-8 md:mb-12 w-16 md:w-20 h-16 md:h-20 rounded-2xl md:rounded-3xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:to-blue-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center shadow-sm">
+                    <ShoppingCart className="w-8 md:w-10 h-8 md:h-10 text-cyan-600 dark:text-cyan-400" />
                   </div>
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white">
-                    Entrega Garantizada
+                    Tienda Online Completa
                   </h3>
-                  <p className="text-lg md:text-xl text-gray-700 dark:text-white/70 leading-relaxed mb-8 md:mb-12">
-                    Sitios web listos en 15 días con hosting incluido. Tu presencia digital funcionando rápidamente.
+                  <p className="text-lg md:text-xl text-gray-700 dark:text-white/70 leading-relaxed mb-6 md:mb-8">
+                    Carrito de compras, pagos seguros, control de inventario y panel administrativo. Todo lo que necesitas para vender online.
                   </p>
+                  <div className="mb-8 md:mb-12">
+                    <Button
+                      variant="outline"
+                      className="text-cyan-600 dark:text-cyan-400 border-cyan-200 dark:border-cyan-700 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 transition-all duration-300"
+                      onClick={() => scrollToSection("pricing")}
+                    >
+                      <ShoppingCart className="w-4 h-4 mr-2" />
+                      Ver Tienda Online - $11,000
+                    </Button>
+                  </div>
                   <div className="h-20 md:h-40 rounded-xl md:rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10 dark:from-orange-500/15 dark:to-red-500/15 backdrop-blur-sm border border-orange-200 dark:border-orange-400/20 shadow-sm flex items-center justify-center group hover:scale-105 hover:shadow-lg transition-all duration-500">
                     <div className="flex items-center gap-3 group-hover:gap-4 transition-all duration-300">
                       <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-orange-400 to-red-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -1413,6 +1415,45 @@ export default function LunchBoxLanding() {
             </div>
           </div>
         </section>
+
+        {/* Floating Price Badge - appears on scroll */}
+        {scrollY > 800 && (
+          <div className="fixed bottom-6 right-6 z-50 animate-fade-in-up">
+            <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-gray-200 dark:border-white/10 rounded-2xl shadow-lg p-4 max-w-xs">
+              <div className="text-center">
+                <p className="text-xs text-gray-600 dark:text-white/60 mb-2">Nuestros Productos</p>
+                <div className="space-y-2">
+                  <button
+                    onClick={() => scrollToSection("pricing")}
+                    className="w-full flex items-center justify-between px-3 py-2 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-all duration-300 group"
+                  >
+                    <div className="flex items-center">
+                      <Layers className="w-4 h-4 text-purple-600 dark:text-purple-400 mr-2" />
+                      <span className="text-sm text-purple-700 dark:text-purple-300">Presencia Digital</span>
+                    </div>
+                    <span className="text-sm font-bold text-purple-600 dark:text-purple-400">$6,000</span>
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("pricing")}
+                    className="w-full flex items-center justify-between px-3 py-2 bg-cyan-50 dark:bg-cyan-900/20 rounded-lg hover:bg-cyan-100 dark:hover:bg-cyan-900/30 transition-all duration-300 group"
+                  >
+                    <div className="flex items-center">
+                      <ShoppingCart className="w-4 h-4 text-cyan-600 dark:text-cyan-400 mr-2" />
+                      <span className="text-sm text-cyan-700 dark:text-cyan-300">Tienda Online</span>
+                    </div>
+                    <span className="text-sm font-bold text-cyan-600 dark:text-cyan-400">$11,000</span>
+                  </button>
+                </div>
+                <button
+                  onClick={() => scrollToContactForm()}
+                  className="w-full mt-3 px-3 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 font-medium"
+                >
+                  Cotizar Ahora
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   )
