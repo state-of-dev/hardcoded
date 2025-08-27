@@ -154,12 +154,16 @@ export default function LunchBoxLanding() {
 
       // Preseleccionar la opción si se proporciona
       if (packageType) {
+        // Actualizar el estado de React
+        setFormData(prev => ({ ...prev, service: packageType }))
+        
+        // También actualizar el DOM como respaldo
         setTimeout(() => {
           const selectElement = document.getElementById("project-type") as HTMLSelectElement
           if (selectElement) {
             selectElement.value = packageType
           }
-        }, 500) // Pequeño delay para asegurar que el scroll termine
+        }, 100) // Reducido el delay
       }
     }
   }
@@ -451,7 +455,7 @@ export default function LunchBoxLanding() {
               <Button
                 variant="ghost"
                 className="text-sm md:text-base text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 hover:no-underline transition-all duration-300"
-                onClick={() => scrollToContactForm()}
+                onClick={() => scrollToContactForm("asesoria")}
               >
                 ¿No estás seguro? Solicita asesoría gratuita
                 <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" />
@@ -1031,7 +1035,7 @@ export default function LunchBoxLanding() {
             {/* CTA */}
             <div className={`text-center mt-12 md:mt-16 animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.5s" }}>
               <Button
-                onClick={() => scrollToSection("contact-form")}
+                onClick={() => scrollToContactForm("asesoria")}
                 size="lg"
                 className="rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
