@@ -416,12 +416,9 @@ export default function LunchBoxLanding() {
               Presencia Digital & Tienda Online
             </Badge>
 
-            <h1 className="text-[3rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] font-bold leading-[0.85] tracking-tighter mb-6 md:mb-8 lg:mb-12 group cursor-default">
-              <span className="block text-gray-900 dark:text-white group-hover:tracking-wide transition-all duration-500">
-                tus clientes
-              </span>
+            <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-bold leading-[0.85] tracking-tighter mb-6 md:mb-8 lg:mb-12 group cursor-default">
               <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400 bg-clip-text text-transparent group-hover:tracking-wide transition-all duration-500">
-                te buscan en línea primero
+                hardcoded.studio
               </span>
             </h1>
 
