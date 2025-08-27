@@ -423,7 +423,7 @@ export default function LunchBoxLanding() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-700 dark:text-white/80 mb-8 md:mb-12 lg:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-4">
-              ¿Apareces cuando te buscan? Creamos <strong className="text-purple-600 dark:text-purple-400">Presencia Digital Profesional</strong> y <strong className="text-cyan-600 dark:text-cyan-400">Tienda Online Completa</strong> que convierten visitantes en clientes.
+              ¿Apareces cuando te buscan? Creamos <strong className="text-purple-600 dark:text-purple-400">Presencia Digital Profesional</strong> y <strong className="text-cyan-600 dark:text-cyan-400">Tienda Online Ilimitada</strong> que convierten visitantes en clientes.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
@@ -478,7 +478,7 @@ export default function LunchBoxLanding() {
                   </span>
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/70 mb-6 md:mb-8 lg:mb-12 leading-relaxed max-w-2xl mx-auto xl:mx-0">
-                  Dos soluciones poderosas: <strong className="text-purple-600 dark:text-purple-400">Presencia Digital Profesional</strong> para empresas de servicios y <strong className="text-cyan-600 dark:text-cyan-400">Tienda Online Completa</strong> para venta de productos.
+                  Dos soluciones poderosas: <strong className="text-purple-600 dark:text-purple-400">Presencia Digital Profesional</strong> para empresas de servicios y <strong className="text-cyan-600 dark:text-cyan-400">Tienda Online Ilimitada</strong> para venta de productos.
                 </p>
                 <div className="flex items-center justify-center xl:justify-start gap-4 md:gap-6 lg:gap-8">
                   <div className="w-12 sm:w-16 md:w-20 h-[2px] bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400" />
@@ -719,7 +719,7 @@ export default function LunchBoxLanding() {
                     </div>
 
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">
-                      Tienda Online Completa
+                      Tienda Online Ilimitada
                     </h3>
 
                     <div className="flex items-baseline gap-2 mb-4 sm:mb-6">
@@ -1058,7 +1058,7 @@ export default function LunchBoxLanding() {
                     Soluciones Escalables
                   </h3>
                   <p className="text-lg md:text-xl text-gray-700 dark:text-white/70 leading-relaxed mb-6 md:mb-8">
-                    Desde Presencia Digital Profesional hasta Tienda Online Completa. Elige el paquete que mejor se adapte a tus
+                    Desde Presencia Digital Profesional hasta Tienda Online Ilimitada. Elige el paquete que mejor se adapte a tus
                     necesidades actuales.
                   </p>
                   <div className="mb-8 md:mb-12">
@@ -1113,7 +1113,7 @@ export default function LunchBoxLanding() {
                     <ShoppingCart className="w-8 md:w-10 h-8 md:h-10 text-cyan-600 dark:text-cyan-400" />
                   </div>
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white">
-                    Tienda Online Completa
+                    Tienda Online Ilimitada
                   </h3>
                   <p className="text-lg md:text-xl text-gray-700 dark:text-white/70 leading-relaxed mb-6 md:mb-8">
                     Carrito de compras, pagos seguros, control de inventario y panel administrativo. Todo lo que necesitas para vender online.
@@ -1429,7 +1429,7 @@ export default function LunchBoxLanding() {
                       >
                         <option value="">Selecciona una opción</option>
                         <option value="empresarial">Presencia Digital Profesional ($6,000)</option>
-                        <option value="ecommerce">Tienda Online Completa ($11,000)</option>
+                        <option value="ecommerce">Tienda Online Ilimitada ($11,000)</option>
                         <option value="asesoria">No estoy seguro, necesito asesoría</option>
                       </select>
                     </div>
