@@ -413,7 +413,7 @@ export default function LunchBoxLanding() {
               className="inline-flex mb-6 md:mb-8 lg:mb-12 text-xs md:text-sm font-light border-gray-300 dark:border-white/20 text-gray-600 dark:text-white/80 px-3 md:px-4 py-1.5 md:py-2 items-center"
             >
               <Sparkles className="w-3 h-3 mr-2" />
-              Presencia Digital & Tienda Online
+              Presencia Digital Profesional & Tienda Online Ilimitada
             </Badge>
 
             <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-bold leading-[0.85] tracking-tighter mb-6 md:mb-8 lg:mb-12 group cursor-default">
@@ -432,7 +432,7 @@ export default function LunchBoxLanding() {
                   className="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-sm sm:text-base md:text-lg group"
                   onClick={() => scrollToSection("pricing")}
                 >
-                  Ver Presencia Digital
+                  Ver Presencia Digital Profesional
                   <Layers className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </div>
@@ -441,7 +441,7 @@ export default function LunchBoxLanding() {
                   className="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-sm sm:text-base md:text-lg group"
                   onClick={() => scrollToSection("pricing")}
                 >
-                  Ver Tienda Online
+                  Ver Tienda Online Ilimitada
                   <ShoppingCart className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </div>
@@ -483,7 +483,7 @@ export default function LunchBoxLanding() {
                 <div className="flex items-center justify-center xl:justify-start gap-4 md:gap-6 lg:gap-8">
                   <div className="w-12 sm:w-16 md:w-20 h-[2px] bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400" />
                   <p className="text-xs sm:text-sm md:text-base text-gray-500 dark:text-white/50">
-                    $6,000 Presencia Digital • $11,000 Tienda Online
+                    $6,000 Presencia Digital Profesional • $11,000 Tienda Online Ilimitada
                   </p>
                 </div>
               </div>
@@ -824,121 +824,205 @@ export default function LunchBoxLanding() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16 md:mb-20">
-              {/* Pregunta 1 */}
-              <div className={`relative group animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.1s" }}>
-                <div className="absolute -top-5 -right-5 w-24 h-24 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 blur-2xl group-hover:blur-xl transition-all duration-500" />
-                <div className="relative text-center">
-                  <div className="mb-6 md:mb-8">
-                    <div className="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 dark:from-purple-500/20 dark:to-pink-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center mb-6 shadow-sm group-hover:shadow-lg group-hover:scale-105 transition-all duration-500">
-                      <FileText className="w-8 h-8 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <div className="flex items-center justify-center gap-2 mb-4">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center shadow-sm">
-                        <span className="text-sm font-bold text-white">1</span>
+            {/* Nuevo diseño del cuestionario */}
+            <div className="max-w-5xl mx-auto mb-16 md:mb-20">
+              {/* Contenedor principal con diseño de flujo */}
+              <div className="relative">
+                {/* Línea conectora central */}
+                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-32 bottom-0 w-0.5 bg-gradient-to-b from-purple-300 via-cyan-300 to-orange-300 dark:from-purple-600 dark:via-cyan-600 dark:to-orange-600 opacity-30"></div>
+                
+                {/* Preguntas */}
+                <div className="space-y-16 lg:space-y-20">
+                  
+                  {/* Pregunta 1 */}
+                  <div className={`relative animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.1s" }}>
+                    <div className="lg:grid lg:grid-cols-3 lg:gap-12 lg:items-center">
+                      {/* Número y pregunta */}
+                      <div className="lg:col-span-1 text-center lg:text-right mb-8 lg:mb-0">
+                        <div className="flex items-center justify-center lg:justify-end gap-4 mb-4">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center shadow-lg">
+                            <span className="text-xl font-bold text-white">1</span>
+                          </div>
+                          <div className="hidden lg:block w-8 h-0.5 bg-gradient-to-r from-purple-600 to-pink-600"></div>
+                        </div>
+                        <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                          ¿Qué vendes?
+                        </h3>
                       </div>
-                      <div className="h-px w-8 bg-gradient-to-r from-purple-600 to-pink-600"></div>
+                      
+                      {/* Opciones */}
+                      <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/30 border-2 border-green-200 dark:border-green-700/50 p-6 hover:shadow-xl hover:border-green-300 dark:hover:border-green-600 transition-all duration-300 cursor-pointer">
+                          <div className="absolute top-0 right-0 w-20 h-20 bg-green-200/30 dark:bg-green-700/20 rounded-full -mr-10 -mt-10"></div>
+                          <div className="relative">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center">
+                                <Grid3X3 className="w-5 h-5 text-white" />
+                              </div>
+                              <span className="text-lg font-bold text-green-800 dark:text-green-300">SERVICIOS</span>
+                            </div>
+                            <p className="text-green-700 dark:text-green-400 mb-3">Consultas, reparaciones, asesorías</p>
+                            <div className="flex items-center gap-2">
+                              <ArrowRight className="w-4 h-4 text-green-600 dark:text-green-500" />
+                              <div className="inline-flex items-center bg-gradient-to-r from-green-500 to-green-700 dark:from-green-400 dark:to-green-600 p-[1px] rounded-full">
+                                <div className="px-3 py-1 bg-white dark:bg-black text-gray-900 dark:text-white text-xs font-bold rounded-full">
+                                  Presencia Digital Profesional
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/30 border-2 border-blue-200 dark:border-blue-700/50 p-6 hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 cursor-pointer">
+                          <div className="absolute top-0 right-0 w-20 h-20 bg-blue-200/30 dark:bg-blue-700/20 rounded-full -mr-10 -mt-10"></div>
+                          <div className="relative">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                                <ShoppingCart className="w-5 h-5 text-white" />
+                              </div>
+                              <span className="text-lg font-bold text-blue-800 dark:text-blue-300">PRODUCTOS</span>
+                            </div>
+                            <p className="text-blue-700 dark:text-blue-400 mb-3">Cosas que se compran y llevan</p>
+                            <div className="flex items-center gap-2">
+                              <ArrowRight className="w-4 h-4 text-blue-600 dark:text-blue-500" />
+                              <div className="inline-flex items-center bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-400 dark:to-blue-600 p-[1px] rounded-full">
+                                <div className="px-3 py-1 bg-white dark:bg-black text-gray-900 dark:text-white text-xs font-bold rounded-full">
+                                  Tienda Online Ilimitada
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
-                      ¿Qué vendes?
-                    </h3>
                   </div>
-                  <div className="space-y-3">
-                    <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700/30 group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors duration-300">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Grid3X3 className="w-4 h-4 text-green-600" />
-                        <p className="font-medium text-green-800 dark:text-green-300">SERVICIOS</p>
-                      </div>
-                      <p className="text-sm text-green-700 dark:text-green-400">Consultas, reparaciones, asesorías</p>
-                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
-                    </div>
-                    <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Infinity className="w-4 h-4 text-blue-600" />
-                        <p className="font-medium text-blue-800 dark:text-blue-300">PRODUCTOS</p>
-                      </div>
-                      <p className="text-sm text-blue-700 dark:text-blue-400">Cosas que se compran y llevan</p>
-                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              {/* Pregunta 2 */}
-              <div className={`relative group animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.2s" }}>
-                <div className="absolute -top-5 -right-5 w-24 h-24 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 blur-2xl group-hover:blur-xl transition-all duration-500" />
-                <div className="relative text-center">
-                  <div className="mb-6 md:mb-8">
-                    <div className="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-r from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:to-blue-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center mb-6 shadow-sm group-hover:shadow-lg group-hover:scale-105 transition-all duration-500">
-                      <Zap className="w-8 h-8 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <div className="flex items-center justify-center gap-2 mb-4">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 flex items-center justify-center shadow-sm">
-                        <span className="text-sm font-bold text-white">2</span>
+                  {/* Pregunta 2 */}
+                  <div className={`relative animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.2s" }}>
+                    <div className="lg:grid lg:grid-cols-3 lg:gap-12 lg:items-center">
+                      {/* Número y pregunta */}
+                      <div className="lg:col-span-1 text-center lg:text-right mb-8 lg:mb-0">
+                        <div className="flex items-center justify-center lg:justify-end gap-4 mb-4">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 flex items-center justify-center shadow-lg">
+                            <span className="text-xl font-bold text-white">2</span>
+                          </div>
+                          <div className="hidden lg:block w-8 h-0.5 bg-gradient-to-r from-cyan-600 to-blue-600"></div>
+                        </div>
+                        <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                          ¿Cómo te pagan?
+                        </h3>
                       </div>
-                      <div className="h-px w-8 bg-gradient-to-r from-cyan-600 to-blue-600"></div>
+                      
+                      {/* Opciones */}
+                      <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/30 border-2 border-green-200 dark:border-green-700/50 p-6 hover:shadow-xl hover:border-green-300 dark:hover:border-green-600 transition-all duration-300 cursor-pointer">
+                          <div className="absolute top-0 right-0 w-20 h-20 bg-green-200/30 dark:bg-green-700/20 rounded-full -mr-10 -mt-10"></div>
+                          <div className="relative">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center">
+                                <Grid3X3 className="w-5 h-5 text-white" />
+                              </div>
+                              <span className="text-lg font-bold text-green-800 dark:text-green-300">EN PERSONA</span>
+                            </div>
+                            <p className="text-green-700 dark:text-green-400 mb-3">Efectivo o transferencia</p>
+                            <div className="flex items-center gap-2">
+                              <ArrowRight className="w-4 h-4 text-green-600 dark:text-green-500" />
+                              <div className="inline-flex items-center bg-gradient-to-r from-green-500 to-green-700 dark:from-green-400 dark:to-green-600 p-[1px] rounded-full">
+                                <div className="px-3 py-1 bg-white dark:bg-black text-gray-900 dark:text-white text-xs font-bold rounded-full">
+                                  Presencia Digital Profesional
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/30 border-2 border-blue-200 dark:border-blue-700/50 p-6 hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 cursor-pointer">
+                          <div className="absolute top-0 right-0 w-20 h-20 bg-blue-200/30 dark:bg-blue-700/20 rounded-full -mr-10 -mt-10"></div>
+                          <div className="relative">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                                <Zap className="w-5 h-5 text-white" />
+                              </div>
+                              <span className="text-lg font-bold text-blue-800 dark:text-blue-300">ONLINE</span>
+                            </div>
+                            <p className="text-blue-700 dark:text-blue-400 mb-3">Tarjeta, PayPal, apps</p>
+                            <div className="flex items-center gap-2">
+                              <ArrowRight className="w-4 h-4 text-blue-600 dark:text-blue-500" />
+                              <div className="inline-flex items-center bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-400 dark:to-blue-600 p-[1px] rounded-full">
+                                <div className="px-3 py-1 bg-white dark:bg-black text-gray-900 dark:text-white text-xs font-bold rounded-full">
+                                  Tienda Online Ilimitada
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
-                      ¿Cómo te pagan?
-                    </h3>
                   </div>
-                  <div className="space-y-3">
-                    <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700/30 group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors duration-300">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Grid3X3 className="w-4 h-4 text-green-600" />
-                        <p className="font-medium text-green-800 dark:text-green-300">EN PERSONA</p>
-                      </div>
-                      <p className="text-sm text-green-700 dark:text-green-400">Efectivo o transferencia</p>
-                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
-                    </div>
-                    <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Infinity className="w-4 h-4 text-blue-600" />
-                        <p className="font-medium text-blue-800 dark:text-blue-300">ONLINE</p>
-                      </div>
-                      <p className="text-sm text-blue-700 dark:text-blue-400">Tarjeta, PayPal, apps</p>
-                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              {/* Pregunta 3 */}
-              <div className={`relative group animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.3s" }}>
-                <div className="absolute -top-5 -right-5 w-24 h-24 rounded-full bg-gradient-to-r from-orange-500/10 to-red-500/10 blur-2xl group-hover:blur-xl transition-all duration-500" />
-                <div className="relative text-center">
-                  <div className="mb-6 md:mb-8">
-                    <div className="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-r from-orange-500/10 to-red-500/10 dark:from-orange-500/20 dark:to-red-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center mb-6 shadow-sm group-hover:shadow-lg group-hover:scale-105 transition-all duration-500">
-                      <ImageIcon className="w-8 h-8 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform duration-300" />
-                    </div>
-                    <div className="flex items-center justify-center gap-2 mb-4">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-orange-600 to-red-600 flex items-center justify-center shadow-sm">
-                        <span className="text-sm font-bold text-white">3</span>
+                  {/* Pregunta 3 */}
+                  <div className={`relative animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`} style={{ animationDelay: "0.3s" }}>
+                    <div className="lg:grid lg:grid-cols-3 lg:gap-12 lg:items-center">
+                      {/* Número y pregunta */}
+                      <div className="lg:col-span-1 text-center lg:text-right mb-8 lg:mb-0">
+                        <div className="flex items-center justify-center lg:justify-end gap-4 mb-4">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-orange-600 to-red-600 flex items-center justify-center shadow-lg">
+                            <span className="text-xl font-bold text-white">3</span>
+                          </div>
+                          <div className="hidden lg:block w-8 h-0.5 bg-gradient-to-r from-orange-600 to-red-600"></div>
+                        </div>
+                        <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                          ¿Mostrar precios?
+                        </h3>
                       </div>
-                      <div className="h-px w-8 bg-gradient-to-r from-orange-600 to-red-600"></div>
+                      
+                      {/* Opciones */}
+                      <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/30 border-2 border-green-200 dark:border-green-700/50 p-6 hover:shadow-xl hover:border-green-300 dark:hover:border-green-600 transition-all duration-300 cursor-pointer">
+                          <div className="absolute top-0 right-0 w-20 h-20 bg-green-200/30 dark:bg-green-700/20 rounded-full -mr-10 -mt-10"></div>
+                          <div className="relative">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center">
+                                <FileText className="w-5 h-5 text-white" />
+                              </div>
+                              <span className="text-lg font-bold text-green-800 dark:text-green-300">PREFIERO QUE ME CONTACTEN</span>
+                            </div>
+                            <p className="text-green-700 dark:text-green-400 mb-3">Para dar cotización personalizada</p>
+                            <div className="flex items-center gap-2">
+                              <ArrowRight className="w-4 h-4 text-green-600 dark:text-green-500" />
+                              <div className="inline-flex items-center bg-gradient-to-r from-green-500 to-green-700 dark:from-green-400 dark:to-green-600 p-[1px] rounded-full">
+                                <div className="px-3 py-1 bg-white dark:bg-black text-gray-900 dark:text-white text-xs font-bold rounded-full">
+                                  Presencia Digital Profesional
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/30 border-2 border-blue-200 dark:border-blue-700/50 p-6 hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 cursor-pointer">
+                          <div className="absolute top-0 right-0 w-20 h-20 bg-blue-200/30 dark:bg-blue-700/20 rounded-full -mr-10 -mt-10"></div>
+                          <div className="relative">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                                <ImageIcon className="w-5 h-5 text-white" />
+                              </div>
+                              <span className="text-lg font-bold text-blue-800 dark:text-blue-300">SÍ, PRECIOS FIJOS</span>
+                            </div>
+                            <p className="text-blue-700 dark:text-blue-400 mb-3">Que compren sin hablarme</p>
+                            <div className="flex items-center gap-2">
+                              <ArrowRight className="w-4 h-4 text-blue-600 dark:text-blue-500" />
+                              <div className="inline-flex items-center bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-400 dark:to-blue-600 p-[1px] rounded-full">
+                                <div className="px-3 py-1 bg-white dark:bg-black text-gray-900 dark:text-white text-xs font-bold rounded-full">
+                                  Tienda Online Ilimitada
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
-                      ¿Mostrar precios?
-                    </h3>
                   </div>
-                  <div className="space-y-3">
-                    <div className="p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700/30 group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors duration-300">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Grid3X3 className="w-4 h-4 text-green-600" />
-                        <p className="font-medium text-green-800 dark:text-green-300">PREFIERO QUE ME CONTACTEN</p>
-                      </div>
-                      <p className="text-sm text-green-700 dark:text-green-400">Para dar cotización personalizada</p>
-                      <p className="text-xs text-green-600 dark:text-green-500 mt-1">→ Presencia Digital</p>
-                    </div>
-                    <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700/30 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors duration-300">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Infinity className="w-4 h-4 text-blue-600" />
-                        <p className="font-medium text-blue-800 dark:text-blue-300">SÍ, PRECIOS FIJOS</p>
-                      </div>
-                      <p className="text-sm text-blue-700 dark:text-blue-400">Que compren sin hablarme</p>
-                      <p className="text-xs text-blue-600 dark:text-blue-500 mt-1">→ Tienda Online</p>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
             </div>
@@ -1025,7 +1109,7 @@ export default function LunchBoxLanding() {
                     <Layers className="w-8 md:w-10 h-8 md:h-10 text-cyan-600 dark:text-cyan-400" />
                   </div>
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white">
-                    Presencia Digital Completa
+                    Presencia Digital Profesional Completa
                   </h3>
                   <p className="text-lg md:text-xl text-gray-700 dark:text-white/70 leading-relaxed mb-8 md:mb-12">
                     Mapa de ubicación, galería multimedia y todas las secciones necesarias para mostrar tu negocio
@@ -1125,7 +1209,7 @@ export default function LunchBoxLanding() {
                       onClick={() => scrollToSection("pricing")}
                     >
                       <ShoppingCart className="w-4 h-4 mr-2" />
-                      Ver Tienda Online - $11,000
+                      Ver Tienda Online Ilimitada - $11,000
                     </Button>
                   </div>
                   <div className="h-20 md:h-40 rounded-xl md:rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10 dark:from-orange-500/15 dark:to-red-500/15 backdrop-blur-sm border border-orange-200 dark:border-orange-400/20 shadow-sm flex items-center justify-center group hover:scale-105 hover:shadow-lg transition-all duration-500">
@@ -1501,7 +1585,7 @@ export default function LunchBoxLanding() {
                   >
                     <div className="flex items-center">
                       <Layers className="w-4 h-4 text-purple-600 dark:text-purple-400 mr-2" />
-                      <span className="text-sm text-purple-700 dark:text-purple-300">Presencia Digital</span>
+                      <span className="text-sm text-purple-700 dark:text-purple-300">Presencia Digital Profesional</span>
                     </div>
                     <span className="text-sm font-bold text-purple-600 dark:text-purple-400">$6,000</span>
                   </button>
@@ -1511,7 +1595,7 @@ export default function LunchBoxLanding() {
                   >
                     <div className="flex items-center">
                       <ShoppingCart className="w-4 h-4 text-cyan-600 dark:text-cyan-400 mr-2" />
-                      <span className="text-sm text-cyan-700 dark:text-cyan-300">Tienda Online</span>
+                      <span className="text-sm text-cyan-700 dark:text-cyan-300">Tienda Online Ilimitada</span>
                     </div>
                     <span className="text-sm font-bold text-cyan-600 dark:text-cyan-400">$11,000</span>
                   </button>
