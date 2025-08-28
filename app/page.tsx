@@ -1560,8 +1560,8 @@ export default function LunchBoxLanding() {
                   <div className="text-center pt-2 sm:pt-4">
                     <p className="text-xs sm:text-sm text-gray-600 dark:text-white/60">
                       <span className="inline-flex items-center gap-2">
-                        <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 text-green-500" />
-                        Te contactaremos en las próximas 2 horas
+                        {/* <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 text-green-500" /> */}
+                        hardcoded.studio
                       </span>
                     </p>
                   </div>
