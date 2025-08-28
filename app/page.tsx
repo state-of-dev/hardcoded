@@ -478,7 +478,7 @@ export default function LunchBoxLanding() {
                 >
                   Expertos en{" "}
                   <span className="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-                    Desarrollo
+                    Desarrollo de Software
                   </span>
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/70 mb-6 md:mb-8 lg:mb-12 leading-relaxed max-w-2xl mx-auto xl:mx-0">
@@ -577,9 +577,9 @@ export default function LunchBoxLanding() {
                 id="pricing-heading"
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 lg:mb-12 leading-tight"
               >
-                Nuestros{" "}
+                Nuestras{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-                  Paquetes
+                  Soluciones
                 </span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/70 leading-relaxed max-w-4xl mx-auto px-4">
@@ -696,7 +696,7 @@ export default function LunchBoxLanding() {
                       className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
                       onClick={() => scrollToContactForm("empresarial")}
                     >
-                      Solicitar Este Paquete
+                      Solicitar
                     </Button>
                   </div>
                 </div>
@@ -806,7 +806,7 @@ export default function LunchBoxLanding() {
                       className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
                       onClick={() => scrollToContactForm("ecommerce")}
                     >
-                      Solicitar Este Paquete
+                      Solicitar
                     </Button>
                   </div>
                 </div>
