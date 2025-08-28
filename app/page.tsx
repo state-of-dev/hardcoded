@@ -417,7 +417,7 @@ export default function LunchBoxLanding() {
               className="inline-flex mb-6 md:mb-8 lg:mb-12 text-xs md:text-sm font-light border-gray-300 dark:border-white/20 text-gray-600 dark:text-white/80 px-3 md:px-4 py-1.5 md:py-2 items-center"
             >
               <Sparkles className="w-3 h-3 mr-2" />
-              Presencia Digital Profesional & Tienda Online Ilimitada
+              Sitio Web + Tienda Online
             </Badge>
 
             <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-bold leading-[0.85] tracking-tighter mb-6 md:mb-8 lg:mb-12 group cursor-default">
@@ -427,7 +427,7 @@ export default function LunchBoxLanding() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-700 dark:text-white/80 mb-8 md:mb-12 lg:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-4">
-              ¿Apareces cuando te buscan? Creamos <strong className="text-purple-600 dark:text-purple-400">Presencia Digital Profesional</strong> y <strong className="text-cyan-600 dark:text-cyan-400">Tienda Online Ilimitada</strong> que convierten visitantes en clientes.
+              ¿Apareces cuando te buscan?<br /> <strong className="text-purple-600 dark:text-purple-400">Presencia Digital Profesional</strong> y <strong className="text-cyan-600 dark:text-cyan-400">Tienda Online Ilimitada</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
@@ -487,7 +487,7 @@ export default function LunchBoxLanding() {
                 <div className="flex items-center justify-center xl:justify-start gap-4 md:gap-6 lg:gap-8">
                   <div className="w-12 sm:w-16 md:w-20 h-[2px] bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400" />
                   <p className="text-xs sm:text-sm md:text-base text-gray-500 dark:text-white/50">
-                    $6,000 Presencia Digital Profesional • $11,000 Tienda Online Ilimitada
+                    $6,000 sitio web • $11,000 e-commerce
                   </p>
                 </div>
               </div>
@@ -583,8 +583,7 @@ export default function LunchBoxLanding() {
                 </span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/70 leading-relaxed max-w-4xl mx-auto px-4">
-                Soluciones web profesionales diseñadas para impulsar tu negocio. Elige el paquete perfecto para tus
-                necesidades.
+                Tu negocio online funcionando automáticamente. Descubre qué solución se adapta mejor a tu proyecto.
               </p>
             </div>
 
@@ -782,7 +781,7 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-cyan-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Calculadora de envíos
+                          Autenticación de usuarios/clientes
                         </span>
                       </li>
                       <li className="flex items-center gap-3">
@@ -1071,6 +1070,7 @@ export default function LunchBoxLanding() {
               <div
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 lg:gap-28 stagger-children ${visibleSections.has("features") ? "visible" : ""}`}
               >
+                {/* Sistema de Contacto Inteligente - Comentado temporalmente
                 <article className="relative">
                   <div className="absolute -top-5 md:-top-10 -left-5 md:-left-10 w-20 md:w-40 h-20 md:h-40 rounded-full bg-gradient-to-r from-purple-500/5 to-pink-500/5 dark:from-purple-500/10 dark:to-pink-500/10 blur-3xl" />
                   <div className="mb-8 md:mb-12 w-16 md:w-20 h-16 md:h-20 rounded-2xl md:rounded-3xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 dark:from-purple-500/20 dark:to-pink-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center shadow-sm">
@@ -1106,6 +1106,7 @@ export default function LunchBoxLanding() {
                     </div>
                   </div>
                 </article>
+                */}
 
                 <article className="relative">
                   <div className="absolute -top-5 md:-top-10 -right-5 md:-right-10 w-20 md:w-40 h-20 md:h-40 rounded-full bg-gradient-to-r from-cyan-500/5 to-blue-500/5 dark:from-cyan-500/10 dark:to-blue-500/10 blur-3xl" />
@@ -1137,6 +1138,7 @@ export default function LunchBoxLanding() {
                   </div>
                 </article>
 
+                {/* Soluciones Escalables - Comentado temporalmente
                 <article className="relative group">
                   <div className="absolute -bottom-5 md:-bottom-10 -left-5 md:-left-10 w-20 md:w-40 h-20 md:h-40 rounded-full bg-gradient-to-r from-green-500/5 to-emerald-500/5 dark:from-green-500/10 dark:to-emerald-500/10 blur-3xl" />
                   <div className="mb-8 md:mb-12 w-16 md:w-20 h-16 md:h-20 rounded-2xl md:rounded-3xl bg-gradient-to-r from-green-500/10 to-emerald-500/10 dark:from-green-500/20 dark:to-emerald-500/20 backdrop-blur-sm border border-gray-200 dark:border-white/10 flex items-center justify-center shadow-sm">
@@ -1160,40 +1162,33 @@ export default function LunchBoxLanding() {
                     </Button>
                   </div>
                   <div className="relative h-32 md:h-40 overflow-hidden rounded-xl md:rounded-2xl bg-gradient-to-b from-green-500/10 via-emerald-500/10 to-transparent dark:from-green-500/15 dark:via-emerald-500/15 dark:to-transparent backdrop-blur-sm border border-green-200 dark:border-green-400/20 shadow-sm">
-                    {/* Infinite bento grid extending downward */}
                     <div className="absolute inset-0 p-2 md:p-3">
                       <div className="grid grid-cols-4 gap-1 md:gap-1.5 h-full">
-                        {/* Row 1 */}
                         <div className="col-span-2 h-6 md:h-8 rounded bg-green-400/60 group-hover:bg-green-500/60 transition-colors duration-300" />
                         <div className="col-span-1 h-6 md:h-8 rounded bg-emerald-400/60 group-hover:bg-emerald-500/60 transition-colors duration-300" />
                         <div className="col-span-1 h-6 md:h-8 rounded bg-teal-400/60 group-hover:bg-teal-500/60 transition-colors duration-300" />
 
-                        {/* Row 2 */}
                         <div className="col-span-1 h-6 md:h-8 rounded bg-emerald-400/50 group-hover:bg-emerald-500/50 transition-colors duration-300" />
                         <div className="col-span-3 h-6 md:h-8 rounded bg-green-400/50 group-hover:bg-green-500/50 transition-colors duration-300" />
 
-                        {/* Row 3 */}
                         <div className="col-span-3 h-6 md:h-8 rounded bg-teal-400/40 group-hover:bg-teal-500/40 transition-colors duration-300" />
                         <div className="col-span-1 h-6 md:h-8 rounded bg-green-400/40 group-hover:bg-green-500/40 transition-colors duration-300" />
 
-                        {/* Row 4 - Fading */}
                         <div className="col-span-2 h-6 md:h-8 rounded bg-emerald-400/30 group-hover:bg-emerald-500/30 transition-colors duration-300" />
                         <div className="col-span-2 h-6 md:h-8 rounded bg-green-400/30 group-hover:bg-green-500/30 transition-colors duration-300" />
 
-                        {/* Row 5 - More fading */}
                         <div className="col-span-1 h-4 md:h-6 rounded bg-teal-400/20 group-hover:bg-teal-500/20 transition-colors duration-300" />
                         <div className="col-span-2 h-4 md:h-6 rounded bg-emerald-400/20 group-hover:bg-emerald-500/20 transition-colors duration-300" />
                         <div className="col-span-1 h-4 md:h-6 rounded bg-green-400/20 group-hover:bg-green-500/20 transition-colors duration-300" />
                       </div>
                     </div>
 
-                    {/* Fade out gradient */}
                     <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-slate-950 to-transparent pointer-events-none" />
 
-                    {/* Hover effect overlay */}
                     <div className="absolute inset-0 bg-gradient-to-b from-green-500/5 to-emerald-500/5 dark:from-green-500/10 dark:to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                 </article>
+                */}
 
                 <article className="relative">
                   <div className="absolute -bottom-5 md:-bottom-10 -right-5 md:-right-10 w-20 md:w-40 h-20 md:h-40 rounded-full bg-gradient-to-r from-orange-500/5 to-red-500/5 dark:from-orange-500/10 dark:to-red-500/10 blur-3xl" />
