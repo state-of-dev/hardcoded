@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm run dev:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "WebSearch"
     ],
     "deny": []
   }

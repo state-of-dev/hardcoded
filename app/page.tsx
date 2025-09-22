@@ -422,7 +422,7 @@ export default function LunchBoxLanding() {
 
             <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-bold leading-[0.85] tracking-tighter mb-6 md:mb-8 lg:mb-12 group cursor-default">
               <span className="block bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400 bg-clip-text text-transparent group-hover:tracking-wide transition-all duration-500">
-                hardcoded.studio
+                hardcoded.space
               </span>
             </h1>
 
@@ -1426,7 +1426,7 @@ export default function LunchBoxLanding() {
               className={`text-center mb-12 md:mb-16 lg:mb-20 animate-fade-in-up ${visibleSections.has("contact") ? "visible" : ""}`}
             >
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/70 leading-relaxed max-w-3xl mx-auto px-4">
-                Cuéntanos sobre tu proyecto y te enviaremos una propuesta personalizada en menos de 24 horas.
+                Cuéntanos sobre tu proyecto y te enviaremos una propuesta.
               </p>
             </div>
 
@@ -1561,7 +1561,7 @@ export default function LunchBoxLanding() {
                     <p className="text-xs sm:text-sm text-gray-600 dark:text-white/60">
                       <span className="inline-flex items-center gap-2">
                         {/* <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 text-green-500" /> */}
-                        hardcoded.studio
+                        hardcoded.space
                       </span>
                     </p>
                   </div>

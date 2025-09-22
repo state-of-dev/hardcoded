@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   creator: 'HARDCODED Agency',
   publisher: 'HARDCODED Agency',
   robots: 'index, follow',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'HARDCODED - Sitios Web Profesionales para PyMEs',
     description: 'Impulsa tu negocio con un sitio web optimizado que convierte visitantes en clientes',

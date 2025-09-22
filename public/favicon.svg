@@ -1,0 +1,12 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="32" height="32" rx="8" ry="8" fill="url(#multiGradient)"/>
+  <defs>
+    <radialGradient id="multiGradient" cx="30%" cy="30%" r="120%">
+      <stop offset="0%" stop-color="hsl(280, 90%, 55%)"/>
+      <stop offset="25%" stop-color="hsl(270, 85%, 45%)"/>
+      <stop offset="50%" stop-color="hsl(250, 80%, 35%)"/>
+      <stop offset="75%" stop-color="hsl(230, 75%, 25%)"/>
+      <stop offset="100%" stop-color="hsl(210, 70%, 15%)"/>
+    </radialGradient>
+  </defs>
+</svg>
