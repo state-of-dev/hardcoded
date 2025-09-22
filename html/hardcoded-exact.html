@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HARDCODED - Sitios Web Profesionales para PyMEs</title>
+  <meta name="description" content="Impulsa tu negocio con un sitio web optimizado que convierte visitantes en clientes. Desarrollo web profesional para empresas de servicios con entrega en 15 días.">
+  <meta name="keywords" content="desarrollo web, sitios web profesionales, PyMEs, páginas web empresariales, tiendas en línea, HARDCODED">
+  <meta name="author" content="HARDCODED Agency">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- CDN Optimizado 2025 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <style>
+    :root {
+      --primary: 270 95% 65%;
+      --primary-dark: 270 100% 70%;
+      --bg-light: 0 0% 100%;
+      --bg-dark: 0 0% 0%;
+    }
+
+    ::selection {
+      background: rgba(168, 85, 247, 0.3);
+      color: #ffffff;
+    }
+
+    .dark ::selection {
+      background: rgba(147, 51, 234, 0.2);
+      color: #1f2937;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.1);
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: rgba(243, 244, 246, 0.5);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(168, 85, 247, 0.3);
+      border-radius: 3px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: rgba(147, 51, 234, 0.3);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(168, 85, 247, 0.5);
+    }
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background: rgba(147, 51, 234, 0.5);
+    }
+
+    /* Breathing animation */
+    @keyframes subtle-breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.01); }
+    }
+
+    .subtle-breathe {
+      animation: subtle-breathe 6s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    /* Hardware acceleration for performance */
+    .hw-accelerate {
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    /* Animation classes */
+    .animate-fade-in-up,
+    .animate-fade-in-left,
+    .animate-fade-in-right,
+    .animate-scale-in,
+    .animate-fade-in {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .animate-fade-in-up.visible,
+    .animate-fade-in-left.visible,
+    .animate-fade-in-right.visible,
+    .animate-scale-in.visible,
+    .animate-fade-in.visible {
+      opacity: 1;
+    }
+
+    /* Staggered animations for children */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
+    .stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; }
+    .stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; }
+
+    .stagger-children.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Fix select options text color in dark mode */
+    .dark select#project-type option {
+      color: black !important;
+      background-color: white !important;
+    }
+
+    /* Form input transitions */
+    .form-input {
+      transition: all 0.3s ease;
+    }
+    .form-input:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(147, 51, 234, 0.15);
+    }
+
+    /* Floating price badge */
+    .floating-price {
+      position: fixed;
+      top: 50%;
+      right: -300px;
+      transform: translateY(-50%);
+      z-index: 1000;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .floating-price.visible {
+      right: 20px;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-slate-950 dark:via-gray-900 dark:to-slate-950 text-gray-900 dark:text-white overflow-x-hidden relative transition-colors duration-500">
+
+  <!-- Artistic Background -->
+  <div class="fixed inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,70,229,0.05),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_at_center,rgba(120,119,198,0.15),rgba(0,0,0,0))]"></div>
+  <div class="fixed top-0 left-0 w-full h-full">
+    <div class="absolute top-[10%] left-[5%] w-32 md:w-64 h-32 md:h-64 rounded-full bg-gradient-to-r from-purple-500/5 to-blue-500/5 dark:from-purple-500/10 dark:to-blue-500/10 blur-3xl subtle-breathe"></div>
+    <div class="absolute top-[40%] right-[10%] w-40 md:w-80 h-40 md:h-80 rounded-full bg-gradient-to-r from-pink-500/5 to-orange-500/5 dark:from-pink-500/10 dark:to-orange-500/10 blur-3xl subtle-breathe" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-[15%] left-[15%] w-36 md:w-72 h-36 md:h-72 rounded-full bg-gradient-to-r from-green-500/5 to-cyan-500/5 dark:from-green-500/10 dark:to-cyan-500/10 blur-3xl subtle-breathe" style="animation-delay: 2s;"></div>
+  </div>
+
+  <!-- Floating Price Badge -->
+  <div id="floating-price" class="floating-price">
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 border border-gray-200 dark:border-gray-700">
+      <div class="text-sm text-gray-600 dark:text-gray-300">Desde</div>
+      <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">$6,000</div>
+      <div class="text-xs text-gray-500 dark:text-gray-400">Presencia Digital</div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="relative z-10">
+    <!-- Responsive Navigation -->
+    <nav class="fixed top-2 sm:top-4 md:top-8 right-2 sm:right-4 md:right-8 z-50" role="navigation" aria-label="Main navigation">
+      <div class="flex items-center gap-2 sm:gap-3 md:gap-6">
+        <button id="theme-toggle" class="text-xs sm:text-sm md:text-lg font-light text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-white/5 transition-all duration-300 px-2 sm:px-3 md:px-4 rounded-full group" aria-label="Toggle between light and dark theme">
+          <div class="group-hover:rotate-180 transition-transform duration-500">
+            <i data-lucide="sun" class="h-3 sm:h-4 md:h-5 w-3 sm:w-4 md:w-5 dark:hidden"></i>
+            <i data-lucide="moon" class="h-3 sm:h-4 md:h-5 w-3 sm:w-4 md:w-5 hidden dark:block"></i>
+          </div>
+        </button>
+        <button onclick="scrollToSection('pricing')" class="hidden sm:inline-flex text-xs sm:text-sm md:text-lg font-light text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-white/5 transition-all duration-300 px-2 sm:px-3 md:px-4">
+          Paquetes
+        </button>
+        <button onclick="scrollToContactForm()" class="rounded-full bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-white/90 px-2 sm:px-3 md:px-6 py-1 sm:py-1.5 md:py-2 text-xs sm:text-sm md:text-base hover:scale-105 transition-all duration-300 hover:shadow-lg">
+          Contactar
+        </button>
+      </div>
+    </nav>
+
+    <!-- Creative Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-12 lg:px-16 relative" data-section="hero">
+      <!-- Morphing Circles/Squares -->
+      <div id="morph-outer" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] lg:w-[800px] h-[400px] md:h-[600px] lg:h-[800px] border border-gray-200 dark:border-white/5 transition-all duration-500 ease-out hw-accelerate"></div>
+      <div id="morph-middle" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[450px] lg:w-[600px] h-[300px] md:h-[450px] lg:h-[600px] border border-gray-200 dark:border-white/10 transition-all duration-500 ease-out hw-accelerate"></div>
+      <div id="morph-inner" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] md:w-[300px] lg:w-[400px] h-[200px] md:h-[300px] lg:h-[400px] border border-gray-300 dark:border-white/20 transition-all duration-500 ease-out hw-accelerate"></div>
+
+      <div class="max-w-6xl mx-auto text-center relative animate-fade-in-up">
+        <span class="inline-flex mb-6 md:mb-8 lg:mb-12 text-xs md:text-sm font-light border border-gray-300 dark:border-white/20 text-gray-600 dark:text-white/80 px-3 md:px-4 py-1.5 md:py-2 items-center rounded-full">
+          <i data-lucide="sparkles" class="w-3 h-3 mr-2"></i>
+          Sitio Web + Tienda Online
+        </span>
+
+        <h1 class="text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] font-bold leading-[0.85] tracking-tighter mb-6 md:mb-8 lg:mb-12 group cursor-default">
+          <span class="block bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-400 dark:via-pink-400 dark:to-cyan-400 bg-clip-text text-transparent group-hover:tracking-wide transition-all duration-500">
+            hardcoded.space
+          </span>
+        </h1>
+
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-700 dark:text-white/80 mb-8 md:mb-12 lg:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-4">
+          ¿Apareces cuando te buscan?<br /> <strong class="text-purple-600 dark:text-purple-400">Presencia Digital Profesional</strong> y <strong class="text-cyan-600 dark:text-cyan-400">Tienda Online Ilimitada</strong>.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+          <div class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-500 dark:to-pink-500 p-[1px] rounded-full group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+            <button onclick="scrollToSection('pricing')" class="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-sm sm:text-base md:text-lg group">
+              Ver Presencia Digital Profesional
+              <i data-lucide="layers" class="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300"></i>
+            </button>
+          </div>
+          <div class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-500 dark:to-blue-500 p-[1px] rounded-full group hover:scale-105 transition-all duration-300 hover:shadow-xl">
+            <button onclick="scrollToSection('pricing')" class="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-sm sm:text-base md:text-lg group">
+              Ver Tienda Online Ilimitada
+              <i data-lucide="shopping-cart" class="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-6 md:mt-8">
+          <button onclick="scrollToContactForm('asesoria')" class="text-sm md:text-base text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 hover:no-underline transition-all duration-300">
+            ¿No estás seguro? Solicita asesoría gratuita
+            <i data-lucide="arrow-right" class="ml-2 h-3 w-3 md:h-4 md:w-4 inline"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Creative Showcase -->
+    <section class="py-24 md:py-32 relative" aria-labelledby="showcase-heading" data-section="showcase">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
+          <!-- Left Column -->
+          <div class="xl:col-span-5 text-center xl:text-left mb-12 xl:mb-0 animate-fade-in-left">
+            <h2 id="showcase-heading" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 lg:mb-12 leading-tight">
+              Expertos en{" "}
+              <span class="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+                Desarrollo de Software
+              </span>
+            </h2>
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/70 mb-6 md:mb-8 lg:mb-12 leading-relaxed max-w-2xl mx-auto xl:mx-0">
+              Dos soluciones poderosas: <strong class="text-purple-600 dark:text-purple-400">Presencia Digital Profesional</strong> para empresas de servicios y <strong class="text-cyan-600 dark:text-cyan-400">Tienda Online Ilimitada</strong> para venta de productos.
+            </p>
+            <div class="flex items-center justify-center xl:justify-start gap-4 md:gap-6 lg:gap-8">
+              <div class="w-12 sm:w-16 md:w-20 h-[2px] bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400"></div>
+              <p class="text-xs sm:text-sm md:text-base text-gray-500 dark:text-white/50">
+                $6,000 sitio web • $11,000 e-commerce
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column - Bento Preview -->
+          <div class="xl:col-span-7 relative max-w-2xl mx-auto xl:max-w-none animate-fade-in-right">
+            <div class="absolute -top-5 sm:-top-10 md:-top-20 -left-5 sm:-left-10 md:-left-20 w-16 sm:w-20 md:w-40 h-16 sm:h-20 md:h-40 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 dark:from-purple-500/20 dark:to-pink-500/20 blur-3xl"></div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-4 grid-rows-3 gap-3 sm:gap-4 md:gap-6 h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+              <!-- Empresarial - Featured -->
+              <div class="col-span-2 row-span-2 bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-xl sm:rounded-2xl md:rounded-3xl border border-gray-200 dark:border-white/10 p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+                <div>
+                  <h3 class="text-sm sm:text-xl md:text-3xl font-bold text-gray-900 dark:text-white relative z-10">
+                    Empresarial
+                  </h3>
+                  <p class="text-[8px] sm:text-xs md:text-sm text-gray-600 dark:text-white/70 mt-1 sm:mt-2">
+                    Presencia profesional
+                  </p>
+                </div>
+                <div class="mt-2 sm:mt-4">
+                  <i data-lucide="briefcase" class="h-4 sm:h-6 md:h-8 lg:h-12 w-4 sm:w-6 md:w-8 lg:w-12 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300"></i>
+                </div>
+              </div>
+
+              <!-- E-commerce -->
+              <div class="col-span-2 row-span-1 bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-xl sm:rounded-2xl border border-gray-200 dark:border-white/10 p-3 sm:p-4 md:p-6 flex items-center justify-between shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
+                <div>
+                  <h3 class="text-xs sm:text-lg md:text-2xl font-medium text-gray-900 dark:text-white relative z-10">
+                    E-commerce
+                  </h3>
+                </div>
+                <i data-lucide="shopping-cart" class="h-3 sm:h-5 md:h-6 lg:h-8 w-3 sm:w-5 md:w-6 lg:w-8 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform duration-300"></i>
+              </div>
+
+              <!-- Servicios -->
+              <div class="col-span-1 row-span-1 bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-xl sm:rounded-2xl border border-gray-200 dark:border-white/10 p-2 sm:p-3 md:p-4 flex flex-col justify-between shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
+                <h3 class="text-[8px] sm:text-sm md:text-xl font-medium text-gray-900 dark:text-white relative z-10">
+                  Servicios
+                </h3>
+                <i data-lucide="users" class="h-3 sm:h-4 md:h-6 w-3 sm:w-4 md:w-6 text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300"></i>
+              </div>
+
+              <!-- Contacto -->
+              <div class="col-span-1 row-span-1 bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-xl sm:rounded-2xl border border-gray-200 dark:border-white/10 p-2 sm:p-3 md:p-4 flex flex-col justify-between shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
+                <h3 class="text-[8px] sm:text-sm md:text-xl font-medium text-gray-900 dark:text-white relative z-10">
+                  Contacto
+                </h3>
+                <i data-lucide="mail" class="h-3 sm:h-4 md:h-6 w-3 sm:w-4 md:w-6 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300"></i>
+              </div>
+
+              <!-- Portafolio -->
+              <div class="col-span-1 row-span-1 bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-xl sm:rounded-2xl border border-gray-200 dark:border-white/10 p-2 sm:p-3 md:p-4 flex flex-col justify-between shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
+                <h3 class="text-xs sm:text-lg md:text-2xl font-medium text-gray-900 dark:text-white relative z-10">
+                  Portafolio
+                </h3>
+                <i data-lucide="image" class="h-3 sm:h-4 md:h-6 w-3 sm:w-4 md:w-6 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300"></i>
+              </div>
+
+              <!-- Ventas -->
+              <div class="col-span-1 row-span-1 bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-xl sm:rounded-2xl border border-gray-200 dark:border-white/10 p-2 sm:p-3 md:p-4 flex flex-col justify-between shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group">
+                <h3 class="text-[8px] sm:text-sm md:text-xl font-medium text-gray-900 dark:text-white relative z-10">
+                  Ventas
+                </h3>
+                <i data-lucide="trending-up" class="h-3 sm:h-4 md:h-6 w-3 sm:w-4 md:w-6 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 md:py-32 relative" aria-labelledby="pricing-heading" data-section="pricing">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div class="text-center mb-12 md:mb-16 lg:mb-20 animate-fade-in-up">
+          <h2 id="pricing-heading" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+            Nuestras <span class="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">Soluciones</span>
+          </h2>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/80 max-w-4xl mx-auto leading-relaxed">
+            Tu negocio online funcionando automáticamente. Descubre qué solución se adapta mejor a tu proyecto.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8 md:gap-12">
+          <!-- Package 1: Presencia Digital Profesional -->
+          <div class="relative bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-2xl md:rounded-3xl border border-gray-200 dark:border-white/10 p-6 md:p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] animate-fade-in-left">
+            <div class="absolute -top-3 -right-3">
+              <span class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                POPULAR
+              </span>
+            </div>
+
+            <div class="mb-6 md:mb-8">
+              <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-gray-900 dark:text-white">
+                Presencia Digital Profesional
+              </h3>
+              <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-purple-600 dark:text-purple-400 mb-3 md:mb-4">
+                $6,000 <span class="text-lg md:text-xl text-gray-500 dark:text-gray-400 font-normal">MXN</span>
+              </div>
+              <p class="text-sm md:text-base lg:text-lg text-gray-600 dark:text-white/70 leading-relaxed">
+                Perfecto para empresas de servicios, consultorios, restaurantes y negocios que necesitan presencia digital profesional.
+              </p>
+            </div>
+
+            <div class="space-y-3 md:space-y-4 mb-8 md:mb-10">
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Página de inicio profesional</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Sección "Acerca de nosotros"</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Catálogo de servicios detallado</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Formularios de contacto</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Mapa de ubicación</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Galería multimedia</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Enlaces directos a Teléfono, Correo, WhatsApp</span>
+              </div>
+            </div>
+
+            <button onclick="selectPlan('Presencia Digital Profesional ($6,000)')" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-xl md:rounded-2xl py-3 md:py-4 lg:py-5 text-base md:text-lg font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+              Solicitar
+            </button>
+          </div>
+
+          <!-- Package 2: Tienda Online Ilimitada -->
+          <div class="relative bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-2xl md:rounded-3xl border border-gray-200 dark:border-white/10 p-6 md:p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] animate-fade-in-right">
+            <div class="absolute -top-3 -right-3">
+              <span class="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                COMPLETO
+              </span>
+            </div>
+
+            <div class="mb-6 md:mb-8">
+              <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-gray-900 dark:text-white">
+                Tienda Online Ilimitada
+              </h3>
+              <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-cyan-600 dark:text-cyan-400 mb-3 md:mb-4">
+                $11,000 <span class="text-lg md:text-xl text-gray-500 dark:text-gray-400 font-normal">MXN</span>
+              </div>
+              <p class="text-sm md:text-base lg:text-lg text-gray-600 dark:text-white/70 leading-relaxed mb-4">
+                Ideal para tiendas, boutiques, distribuidoras y negocios que quieren vender productos online con sistema completo.
+              </p>
+              <p class="text-sm md:text-base text-purple-600 dark:text-purple-400 font-medium">
+                Todo lo del paquete anterior MÁS:
+              </p>
+            </div>
+
+            <div class="space-y-3 md:space-y-4 mb-8 md:mb-10">
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Catálogo de productos ilimitado</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Carrito de compras</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Sistema de gestión de inventario</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Múltiples métodos de pago</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Autenticación de usuarios/clientes</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i data-lucide="check" class="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0"></i>
+                <span class="text-sm md:text-base text-gray-700 dark:text-white/80">Panel administrativo</span>
+              </div>
+            </div>
+
+            <button onclick="selectPlan('Tienda Online Ilimitada ($11,000)')" class="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white rounded-xl md:rounded-2xl py-3 md:py-4 lg:py-5 text-base md:text-lg font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+              Solicitar
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decision Helper Section -->
+    <section class="py-24 md:py-32 relative" data-section="decision">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div class="text-center mb-12 md:mb-16 lg:mb-20 animate-fade-in-up">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+            Te ayudamos a decidir
+          </h2>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/80 max-w-4xl mx-auto leading-relaxed">
+            3 preguntas simples para saber exactamente qué necesita tu negocio
+          </p>
+        </div>
+
+        <div class="space-y-8 md:space-y-12 lg:space-y-16 stagger-children">
+          <!-- Question 1 -->
+          <div class="bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-2xl md:rounded-3xl border border-gray-200 dark:border-white/10 p-6 md:p-8 lg:p-10">
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8 text-center">¿Qué vendes?</h3>
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+              <div class="bg-purple-50 dark:bg-purple-900/20 border-2 border-purple-200 dark:border-purple-600 rounded-xl p-4 md:p-6 text-center hover:scale-105 transition-transform duration-300">
+                <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">SERVICIOS</div>
+                <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4">Consultas, reparaciones, asesorías</div>
+                <div class="text-xs md:text-sm text-purple-600 dark:text-purple-400 font-medium">→ Presencia Digital Profesional</div>
+              </div>
+              <div class="bg-cyan-50 dark:bg-cyan-900/20 border-2 border-cyan-200 dark:border-cyan-600 rounded-xl p-4 md:p-6 text-center hover:scale-105 transition-transform duration-300">
+                <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">PRODUCTOS</div>
+                <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4">Cosas que se compran y llevan</div>
+                <div class="text-xs md:text-sm text-cyan-600 dark:text-cyan-400 font-medium">→ Tienda Online Ilimitada</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-2xl md:rounded-3xl border border-gray-200 dark:border-white/10 p-6 md:p-8 lg:p-10">
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8 text-center">¿Cómo te pagan?</h3>
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+              <div class="bg-purple-50 dark:bg-purple-900/20 border-2 border-purple-200 dark:border-purple-600 rounded-xl p-4 md:p-6 text-center hover:scale-105 transition-transform duration-300">
+                <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">EN PERSONA</div>
+                <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4">Efectivo o transferencia</div>
+                <div class="text-xs md:text-sm text-purple-600 dark:text-purple-400 font-medium">→ Presencia Digital Profesional</div>
+              </div>
+              <div class="bg-cyan-50 dark:bg-cyan-900/20 border-2 border-cyan-200 dark:border-cyan-600 rounded-xl p-4 md:p-6 text-center hover:scale-105 transition-transform duration-300">
+                <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">ONLINE</div>
+                <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4">Tarjeta, PayPal, apps</div>
+                <div class="text-xs md:text-sm text-cyan-600 dark:text-cyan-400 font-medium">→ Tienda Online Ilimitada</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-2xl md:rounded-3xl border border-gray-200 dark:border-white/10 p-6 md:p-8 lg:p-10">
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8 text-center">¿Mostrar precios?</h3>
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+              <div class="bg-purple-50 dark:bg-purple-900/20 border-2 border-purple-200 dark:border-purple-600 rounded-xl p-4 md:p-6 text-center hover:scale-105 transition-transform duration-300">
+                <div class="text-lg md:text-xl lg:text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2">PREFIERO QUE ME CONTACTEN</div>
+                <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4">Para dar cotización personalizada</div>
+                <div class="text-xs md:text-sm text-purple-600 dark:text-purple-400 font-medium">→ Presencia Digital Profesional</div>
+              </div>
+              <div class="bg-cyan-50 dark:bg-cyan-900/20 border-2 border-cyan-200 dark:border-cyan-600 rounded-xl p-4 md:p-6 text-center hover:scale-105 transition-transform duration-300">
+                <div class="text-lg md:text-xl lg:text-2xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">SÍ, PRECIOS FIJOS</div>
+                <div class="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4">Que compren sin hablarme</div>
+                <div class="text-xs md:text-sm text-cyan-600 dark:text-cyan-400 font-medium">→ Tienda Online Ilimitada</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12 md:mt-16">
+          <button onclick="scrollToContactForm('asesoria')" class="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white rounded-full px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            ¿Aún no estás seguro? Solicita asesoría personalizada
+            <i data-lucide="arrow-right" class="h-5 w-5"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 md:py-32 relative" aria-labelledby="features-heading" data-section="features">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div class="text-center mb-12 md:mb-16 lg:mb-20 animate-fade-in-up">
+          <h2 id="features-heading" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+            <span class="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">Funcionalidades</span> incluidas
+          </h2>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/80 max-w-4xl mx-auto leading-relaxed">
+            Todo lo que tu sitio web necesita para funcionar correctamente y generar resultados desde el primer día.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+          <!-- Feature 1 -->
+          <div class="bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-2xl md:rounded-3xl border border-gray-200 dark:border-white/10 p-6 md:p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] animate-fade-in-left">
+            <div class="text-center mb-6 md:mb-8">
+              <i data-lucide="star" class="h-12 md:h-16 w-12 md:w-16 text-purple-600 dark:text-purple-400 mx-auto mb-4"></i>
+              <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                Presencia Digital Profesional Completa
+              </h3>
+              <p class="text-sm md:text-base lg:text-lg text-gray-600 dark:text-white/70 leading-relaxed">
+                Mapa de ubicación, galería multimedia y todas las secciones necesarias para mostrar tu negocio profesionalmente.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-2xl md:rounded-3xl border border-gray-200 dark:border-white/10 p-6 md:p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] animate-fade-in-right">
+            <div class="text-center mb-6 md:mb-8">
+              <i data-lucide="shopping-cart" class="h-12 md:h-16 w-12 md:w-16 text-cyan-600 dark:text-cyan-400 mx-auto mb-4"></i>
+              <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                Tienda Online Ilimitada
+              </h3>
+              <p class="text-sm md:text-base lg:text-lg text-gray-600 dark:text-white/70 leading-relaxed mb-6">
+                Carrito de compras, pagos seguros, control de inventario y panel administrativo. Todo lo que necesitas para vender online.
+              </p>
+              <button onclick="selectPlan('Tienda Online Ilimitada ($11,000)')" class="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white rounded-xl px-6 py-3 text-sm md:text-base font-semibold transition-all duration-300 hover:scale-105">
+                Ver Tienda Online Ilimitada - $11,000
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-24 md:py-32 relative" aria-labelledby="process-heading" data-section="process">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div class="text-center mb-12 md:mb-16 lg:mb-20 animate-fade-in-up">
+          <span class="inline-block bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            Nuestro Proceso
+          </span>
+          <h2 id="process-heading" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+            Proceso <span class="bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 bg-clip-text text-transparent">Simplificado</span>
+          </h2>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/80 max-w-4xl mx-auto leading-relaxed">
+            Desde la primera conversación hasta el lanzamiento, te acompañamos en cada paso para crear tu presencia digital perfecta.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 stagger-children">
+          <!-- Step 1 -->
+          <div class="text-center">
+            <div class="relative mb-6 md:mb-8">
+              <div class="w-16 md:w-20 h-16 md:h-20 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span class="text-2xl md:text-3xl font-bold text-white">1</span>
+              </div>
+              <div class="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-green-600 to-emerald-600"></div>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-900 dark:text-white">Primera Revisión</h3>
+            <p class="text-sm md:text-base text-gray-600 dark:text-white/70 leading-relaxed">
+              Conversamos sobre tu proyecto y definimos los objetivos de tu sitio web.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="text-center">
+            <div class="relative mb-6 md:mb-8">
+              <div class="w-16 md:w-20 h-16 md:h-20 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span class="text-2xl md:text-3xl font-bold text-white">2</span>
+              </div>
+              <div class="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-green-600 to-emerald-600"></div>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-900 dark:text-white">Diseño y Desarrollo</h3>
+            <p class="text-sm md:text-base text-gray-600 dark:text-white/70 leading-relaxed">
+              Creamos tu sitio web con diseño personalizado y todas las funcionalidades que necesitas.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="text-center">
+            <div class="relative mb-6 md:mb-8">
+              <div class="w-16 md:w-20 h-16 md:h-20 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span class="text-2xl md:text-3xl font-bold text-white">3</span>
+              </div>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-900 dark:text-white">Lanzamiento</h3>
+            <p class="text-sm md:text-base text-gray-600 dark:text-white/70 leading-relaxed">
+              Coordinamos detalles y publicamos tu sitio web.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-24 md:py-32 relative" aria-labelledby="cta-heading" data-section="cta">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 text-center">
+        <div class="animate-fade-in-up">
+          <h2 id="cta-heading" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+            ¿Listo para <span class="bg-gradient-to-r from-orange-600 to-red-600 dark:from-orange-400 dark:to-red-400 bg-clip-text text-transparent">crecer</span>?
+          </h2>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-white/80 mb-8 md:mb-12 leading-relaxed">
+            ¿Te gustan los estilos visuales de esta web?
+          </p>
+          <button onclick="scrollToContactForm()" class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white rounded-full px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            Solicitar Cotización
+            <i data-lucide="arrow-right" class="h-6 w-6"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-24 md:py-32 relative" aria-labelledby="contact-heading" data-section="contact">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div class="text-center mb-12 md:mb-16 animate-fade-in-up">
+          <h2 id="contact-heading" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
+            Comienza Tu Proyecto
+          </h2>
+          <p class="text-base sm:text-lg md:text-xl text-gray-700 dark:text-white/80 leading-relaxed">
+            Cuéntanos sobre tu proyecto y te enviaremos una propuesta.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800/50 backdrop-blur-lg rounded-2xl md:rounded-3xl border border-gray-200 dark:border-white/10 p-6 md:p-8 lg:p-10 shadow-xl animate-fade-in-up">
+          <form id="contact-form" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-2 text-gray-700 dark:text-white/80">Nombre completo *</label>
+                <input type="text" id="name" name="name" required placeholder="Tu nombre" class="form-input w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium mb-2 text-gray-700 dark:text-white/80">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" class="form-input w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white">
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="phone" class="block text-sm font-medium mb-2 text-gray-700 dark:text-white/80">Teléfono *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="55 1234 5678" class="form-input w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white">
+              </div>
+              <div>
+                <label for="project-type" class="block text-sm font-medium mb-2 text-gray-700 dark:text-white/80">Tipo de proyecto *</label>
+                <select id="project-type" name="service" required class="form-input w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white">
+                  <option value="">Selecciona una opción</option>
+                  <option value="Presencia Digital Profesional ($6,000)">Presencia Digital Profesional ($6,000)</option>
+                  <option value="Tienda Online Ilimitada ($11,000)">Tienda Online Ilimitada ($11,000)</option>
+                  <option value="No estoy seguro, necesito asesoría">No estoy seguro, necesito asesoría</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium mb-2 text-gray-700 dark:text-white/80">Cuéntanos sobre tu negocio *</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Describe brevemente tu empresa y qué necesitas..." class="form-input w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white"></textarea>
+            </div>
+            <button type="submit" class="w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-xl font-semibold transition-all hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed text-lg">
+              <span class="submit-text">Solicitar Cotización</span>
+              <span class="loading-text hidden">Enviando...</span>
+            </button>
+            <div id="submit-message" class="text-center font-medium hidden"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-gray-900 text-white relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="mb-8">
+        <h3 class="text-2xl font-bold mb-4">hardcoded.space</h3>
+      </div>
+      <div class="border-t border-gray-800 pt-8">
+        <p class="text-gray-400">&copy; 2025 hardcoded.space. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize EmailJS (you'll need to replace these with your actual EmailJS configuration)
+    // emailjs.init('YOUR_EMAILJS_USER_ID');
+
+    // Global variables
+    let isDarkMode = true;
+    let scrollY = 0;
+    let visibleSections = new Set();
+
+    // Theme management
+    function initializeTheme() {
+      const lastTheme = localStorage.getItem("lunch-box-theme");
+      let newTheme;
+
+      if (lastTheme === null) {
+        // First visit - random theme
+        newTheme = Math.random() > 0.5;
+        console.log("🎲 Primera visita - tema aleatorio:", newTheme ? "dark" : "light");
+      } else {
+        // Alternate from last theme
+        newTheme = lastTheme === "light";
+        console.log("🔄 Alternando tema - anterior:", lastTheme, "nuevo:", newTheme ? "dark" : "light");
+      }
+
+      isDarkMode = newTheme;
+
+      if (newTheme) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      localStorage.setItem("lunch-box-theme", newTheme ? "dark" : "light");
+    }
+
+    // Theme toggle
+    function toggleTheme() {
+      isDarkMode = !isDarkMode;
+      document.documentElement.classList.toggle("dark");
+      localStorage.setItem("lunch-box-theme", isDarkMode ? "dark" : "light");
+      console.log("🎨 Tema cambiado manualmente a:", isDarkMode ? "dark" : "light");
+    }
+
+    // Smooth scrolling
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Scroll to contact form with optional package preselection
+    function scrollToContactForm(packageType) {
+      const element = document.getElementById('contact-form');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+
+        if (packageType) {
+          setTimeout(() => {
+            const selectElement = document.getElementById('project-type');
+            if (selectElement) {
+              if (packageType === 'asesoria') {
+                selectElement.value = 'No estoy seguro, necesito asesoría';
+              } else {
+                selectElement.value = packageType;
+              }
+            }
+          }, 100);
+        }
+      }
+    }
+
+    // Select plan function
+    function selectPlan(planName) {
+      const selectElement = document.getElementById('project-type');
+      if (selectElement) {
+        selectElement.value = planName;
+      }
+      scrollToContactForm();
+    }
+
+    // Morphing shapes based on scroll
+    function updateMorphingShapes() {
+      if (scrollY === 0) {
+        document.getElementById('morph-outer').style.borderRadius = '50%';
+        document.getElementById('morph-outer').style.transform = 'translate(-50%, -50%) rotate(0deg)';
+        document.getElementById('morph-middle').style.borderRadius = '50%';
+        document.getElementById('morph-middle').style.transform = 'translate(-50%, -50%) rotate(0deg)';
+        document.getElementById('morph-inner').style.borderRadius = '50%';
+        document.getElementById('morph-inner').style.transform = 'translate(-50%, -50%) rotate(0deg)';
+        return;
+      }
+
+      const progress = Math.min(scrollY / 2000, 1);
+      const radius = 50 - (progress * 25); // 50% to 25%
+      const angle = progress * 15;
+
+      document.getElementById('morph-outer').style.borderRadius = `${radius}%`;
+      document.getElementById('morph-outer').style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+
+      document.getElementById('morph-middle').style.borderRadius = `${radius}%`;
+      document.getElementById('morph-middle').style.transform = `translate(-50%, -50%) rotate(-${angle}deg)`;
+
+      document.getElementById('morph-inner').style.borderRadius = `${radius}%`;
+      document.getElementById('morph-inner').style.transform = `translate(-50%, -50%) rotate(${angle * 0.5}deg)`;
+    }
+
+    // Floating price badge
+    function updateFloatingPrice() {
+      const floatingPrice = document.getElementById('floating-price');
+      if (scrollY > 800) {
+        floatingPrice.classList.add('visible');
+      } else {
+        floatingPrice.classList.remove('visible');
+      }
+    }
+
+    // Optimized scroll handler
+    let ticking = false;
+    function handleScroll() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          scrollY = window.scrollY;
+          updateMorphingShapes();
+          updateFloatingPrice();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    // Intersection Observer for animations
+    function initializeAnimations() {
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "25% 0px -25% 0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const sectionId = entry.target.getAttribute('data-section');
+          if (sectionId && entry.isIntersecting && !visibleSections.has(sectionId)) {
+            visibleSections.add(sectionId);
+            entry.target.classList.add('visible');
+
+            // Add visible class to all animated elements in this section
+            const animatedElements = entry.target.querySelectorAll('.animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right, .animate-scale-in, .animate-fade-in, .stagger-children');
+            animatedElements.forEach(el => el.classList.add('visible'));
+
+            // Stop observing this section
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections
+      document.querySelectorAll('[data-section]').forEach(section => {
+        observer.observe(section);
+      });
+    }
+
+    // Form submission
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const submitText = submitBtn.querySelector('.submit-text');
+      const loadingText = submitBtn.querySelector('.loading-text');
+      const messageDiv = document.getElementById('submit-message');
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitText.classList.add('hidden');
+      loadingText.classList.remove('hidden');
+
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+
+      try {
+        // For demo purposes, we'll simulate a successful submission
+        // In a real implementation, you would send this to your server or use EmailJS
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Simulate success
+        messageDiv.textContent = '¡Mensaje enviado correctamente! Te contactaremos pronto.';
+        messageDiv.className = 'text-center font-medium text-green-600 dark:text-green-400';
+        messageDiv.classList.remove('hidden');
+
+        e.target.reset();
+
+        // For real implementation with EmailJS:
+        // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', data);
+
+      } catch (error) {
+        messageDiv.textContent = 'Error al enviar el mensaje. Intenta nuevamente.';
+        messageDiv.className = 'text-center font-medium text-red-600 dark:text-red-400';
+        messageDiv.classList.remove('hidden');
+      }
+
+      // Reset button state
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitText.classList.remove('hidden');
+        loadingText.classList.add('hidden');
+        messageDiv.classList.add('hidden');
+      }, 3000);
+    }
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize theme
+      initializeTheme();
+
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Initialize animations
+      initializeAnimations();
+
+      // Add event listeners
+      document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+      document.getElementById('contact-form').addEventListener('submit', handleFormSubmit);
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      // Initial calls
+      updateMorphingShapes();
+      updateFloatingPrice();
+    });
+  </script>
+</body>
+</html>

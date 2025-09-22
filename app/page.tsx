@@ -631,7 +631,7 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-purple-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Página de inicio profesional
+                          Página de inicio
                         </span>
                       </li>
                       <li className="flex items-center gap-3">
@@ -647,7 +647,7 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-purple-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Catálogo de servicios detallado
+                          Catálogo de servicios
                         </span>
                       </li>
                       <li className="flex items-center gap-3">
@@ -679,7 +679,7 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-purple-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Enlaces directos a Teléfono, Correo, WhatsApp.
+                          Enlaces a Teléfono, Correo y Redes Sociales.
                         </span>
                       </li>
                       {/* <li className="flex items-center gap-3">
@@ -734,7 +734,7 @@ export default function LunchBoxLanding() {
 
                     <p className="text-sm sm:text-base text-gray-700 dark:text-white/70 mb-4 sm:mb-6 leading-relaxed">
                       Ideal para tiendas, boutiques, distribuidoras y negocios que quieren vender productos online con
-                      sistema completo.
+                      sistema automático.
                     </p>
 
                     <div className="mb-4 sm:mb-6">
@@ -757,7 +757,7 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-cyan-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Carrito de compras
+                          Notificaciones de envío
                         </span>
                       </li>
                       <li className="flex items-center gap-3">
@@ -789,7 +789,7 @@ export default function LunchBoxLanding() {
                           <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-cyan-500" />
                         </div>
                         <span className="text-xs sm:text-sm md:text-base text-gray-700 dark:text-white/80">
-                          Panel administrativo
+                          Dashboard de administración
                         </span>
                       </li>
                       {/* <li className="flex items-center gap-3">
@@ -1117,8 +1117,7 @@ export default function LunchBoxLanding() {
                     Presencia Digital Profesional Completa
                   </h3>
                   <p className="text-lg md:text-xl text-gray-700 dark:text-white/70 leading-relaxed mb-8 md:mb-12">
-                    Mapa de ubicación, galería multimedia y todas las secciones necesarias para mostrar tu negocio
-                    profesionalmente.
+                    Mapa de ubicación, galería multimedia, formularios de contacto y todas las secciones necesarias. Clientes pueden conocer todos los detalles de tus servicios antes de contactarte.
                   </p>
                   <div className="grid grid-cols-2 gap-3 md:gap-4">
                     <div className="h-24 md:h-36 rounded-xl md:rounded-2xl bg-gradient-to-br from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/15 dark:to-blue-500/15 backdrop-blur-sm border border-cyan-200 dark:border-cyan-400/20 shadow-sm flex flex-col items-center justify-center gap-2 group hover:scale-105 hover:-rotate-1 hover:shadow-lg transition-all duration-500">
@@ -1199,7 +1198,7 @@ export default function LunchBoxLanding() {
                     Tienda Online Ilimitada
                   </h3>
                   <p className="text-lg md:text-xl text-gray-700 dark:text-white/70 leading-relaxed mb-6 md:mb-8">
-                    Carrito de compras, pagos seguros, control de inventario y panel administrativo. Todo lo que necesitas para vender online.
+                    Notificaciones de envío, pagos seguros, control de inventario y panel administrativo. Clientes pueden revisar el estado de sus compras en tu página y guardar sus favoritos en su cuenta.
                   </p>
                   <div className="mb-8 md:mb-12">
                     <Button

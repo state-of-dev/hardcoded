@@ -4,7 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'HARDCODED - Sitios Web Profesionales para PyMEs',
+  title: 'HARDCODED - Consultoría en Desarrollo de Software',
   description: 'Impulsa tu negocio con un sitio web optimizado que convierte visitantes en clientes. Desarrollo web profesional para empresas de servicios con entrega en 15 días.',
   keywords: 'desarrollo web, sitios web profesionales, PyMEs, páginas web empresariales, tiendas en línea, HARDCODED',
   authors: [{ name: 'HARDCODED Agency' }],
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     apple: '/favicon.svg',
   },
   openGraph: {
-    title: 'HARDCODED - Sitios Web Profesionales para PyMEs',
+    title: 'HARDCODED - Consultoría en Desarrollo de Software',
     description: 'Impulsa tu negocio con un sitio web optimizado que convierte visitantes en clientes',
     type: 'website',
     locale: 'es_MX',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HARDCODED - Sitios Web Profesionales para PyMEs',
+    title: 'HARDCODED - Consultoría en Desarrollo de Software',
     description: 'Impulsa tu negocio con un sitio web optimizado que convierte visitantes en clientes',
   },
 }
