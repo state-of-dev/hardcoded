@@ -136,45 +136,6 @@ export default function LunchBoxLanding() {
     }
   }, [])
 
-  // Prevent all automatic scrolling for contact form elements
-  useEffect(() => {
-    // Override scrollIntoView globally for form elements
-    const originalScrollIntoView = Element.prototype.scrollIntoView
-
-    Element.prototype.scrollIntoView = function(options?: boolean | ScrollIntoViewOptions) {
-      // Check if this element is inside the contact form
-      const contactForm = document.getElementById('contact-form')
-      if (contactForm && contactForm.contains(this)) {
-        // Do nothing - prevent scroll for contact form elements
-        return
-      }
-
-      // For other elements, use original scrollIntoView
-      return originalScrollIntoView.call(this, options)
-    }
-
-    // Also prevent focus scroll for inputs/textareas
-    const handleFocus = (e: FocusEvent) => {
-      const target = e.target as HTMLElement
-      if ((target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') &&
-          target.closest('#contact-form')) {
-        // Temporarily disable scrollIntoView for this element
-        const originalMethod = target.scrollIntoView
-        target.scrollIntoView = () => {}
-
-        setTimeout(() => {
-          target.scrollIntoView = originalMethod
-        }, 100)
-      }
-    }
-
-    document.addEventListener('focus', handleFocus, true)
-
-    return () => {
-      Element.prototype.scrollIntoView = originalScrollIntoView
-      document.removeEventListener('focus', handleFocus, true)
-    }
-  }, [])
 
   // Removed mouse tracking for better performance
 
@@ -186,20 +147,17 @@ export default function LunchBoxLanding() {
     }
   }
 
-  // Función para preseleccionar opción del formulario (sin scroll automático)
-  const scrollToContactForm = (packageType?: string) => {
-    // Solo preseleccionar la opción si se proporciona, sin hacer scroll
-    if (packageType) {
-      // Actualizar el estado de React
-      setFormData(prev => ({ ...prev, service: packageType }))
+  // Función que NO hace scroll - solo preselecciona si hay packageType
+  const scrollToContactForm = (packageType?: string, e?: React.MouseEvent) => {
+    // Prevenir cualquier comportamiento por defecto del navegador
+    if (e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
 
-      // También actualizar el DOM como respaldo
-      setTimeout(() => {
-        const selectElement = document.getElementById("project-type") as HTMLSelectElement
-        if (selectElement) {
-          selectElement.value = packageType
-        }
-      }, 100)
+    // Solo preseleccionar - NO hacer scroll
+    if (packageType) {
+      setFormData(prev => ({ ...prev, service: packageType }))
     }
   }
 
@@ -1439,7 +1397,10 @@ export default function LunchBoxLanding() {
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-500 dark:via-pink-500 dark:to-cyan-500 p-[1px] rounded-full group hover:scale-105 transition-all duration-300 hover:shadow-xl">
               <Button
                 className="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-8 md:px-12 py-6 md:py-8 text-lg md:text-2xl group"
-                onClick={() => scrollToContactForm()}
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleSubmit(e as any)
+                }}
               >
                 Solicitar Cotización
                 <ArrowRight className="ml-2 md:ml-3 h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform duration-300" />
