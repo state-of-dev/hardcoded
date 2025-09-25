@@ -130,4 +130,9 @@ body {
     min-width: 44px;
     touch-action: manipulation;
   }
+
+  /* Prevent scroll on form submit button */
+  button[type="button"] {
+    touch-action: none;
+  }
 }
