@@ -136,6 +136,25 @@ export default function LunchBoxLanding() {
     }
   }, [])
 
+  // Prevent input focus scroll on mobile
+  useEffect(() => {
+    const preventFocusScroll = (e: Event) => {
+      const target = e.target as HTMLElement
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
+        e.preventDefault()
+        target.focus({ preventScroll: true })
+      }
+    }
+
+    // Only add on mobile devices
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      document.addEventListener('focusin', preventFocusScroll, true)
+      return () => {
+        document.removeEventListener('focusin', preventFocusScroll, true)
+      }
+    }
+  }, [])
+
   // Removed mouse tracking for better performance
 
   // Función para scroll suave a secciones
@@ -146,28 +165,20 @@ export default function LunchBoxLanding() {
     }
   }
 
-  // Función para ir al formulario con opción preseleccionada
+  // Función para preseleccionar opción del formulario (sin scroll automático)
   const scrollToContactForm = (packageType?: string) => {
-    const element = document.getElementById("contact-form")
-    if (element) {
-      // Solo hacer scroll en desktop, no en mobile
-      if (window.innerWidth >= 768) {
-        element.scrollIntoView({ behavior: "smooth" })
-      }
+    // Solo preseleccionar la opción si se proporciona, sin hacer scroll
+    if (packageType) {
+      // Actualizar el estado de React
+      setFormData(prev => ({ ...prev, service: packageType }))
 
-      // Preseleccionar la opción si se proporciona
-      if (packageType) {
-        // Actualizar el estado de React
-        setFormData(prev => ({ ...prev, service: packageType }))
-
-        // También actualizar el DOM como respaldo
-        setTimeout(() => {
-          const selectElement = document.getElementById("project-type") as HTMLSelectElement
-          if (selectElement) {
-            selectElement.value = packageType
-          }
-        }, 100) // Reducido el delay
-      }
+      // También actualizar el DOM como respaldo
+      setTimeout(() => {
+        const selectElement = document.getElementById("project-type") as HTMLSelectElement
+        if (selectElement) {
+          selectElement.value = packageType
+        }
+      }, 100)
     }
   }
 
@@ -1534,12 +1545,6 @@ export default function LunchBoxLanding() {
                       required
                       value={formData.message}
                       onChange={handleInputChange}
-                      onFocus={(e) => {
-                        // Prevenir scroll automático en mobile
-                        if (window.innerWidth < 768) {
-                          e.target.scrollIntoView = () => {}
-                        }
-                      }}
                       placeholder="Describe brevemente tu empresa y qué necesitas..."
                       className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none text-sm sm:text-base"
                     />
