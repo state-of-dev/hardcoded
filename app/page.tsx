@@ -136,22 +136,43 @@ export default function LunchBoxLanding() {
     }
   }, [])
 
-  // Prevent input focus scroll on mobile
+  // Prevent all automatic scrolling for contact form elements
   useEffect(() => {
-    const preventFocusScroll = (e: Event) => {
+    // Override scrollIntoView globally for form elements
+    const originalScrollIntoView = Element.prototype.scrollIntoView
+
+    Element.prototype.scrollIntoView = function(options?: boolean | ScrollIntoViewOptions) {
+      // Check if this element is inside the contact form
+      const contactForm = document.getElementById('contact-form')
+      if (contactForm && contactForm.contains(this)) {
+        // Do nothing - prevent scroll for contact form elements
+        return
+      }
+
+      // For other elements, use original scrollIntoView
+      return originalScrollIntoView.call(this, options)
+    }
+
+    // Also prevent focus scroll for inputs/textareas
+    const handleFocus = (e: FocusEvent) => {
       const target = e.target as HTMLElement
-      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
-        e.preventDefault()
-        target.focus({ preventScroll: true })
+      if ((target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') &&
+          target.closest('#contact-form')) {
+        // Temporarily disable scrollIntoView for this element
+        const originalMethod = target.scrollIntoView
+        target.scrollIntoView = () => {}
+
+        setTimeout(() => {
+          target.scrollIntoView = originalMethod
+        }, 100)
       }
     }
 
-    // Only add on mobile devices
-    if (typeof window !== 'undefined' && window.innerWidth < 768) {
-      document.addEventListener('focusin', preventFocusScroll, true)
-      return () => {
-        document.removeEventListener('focusin', preventFocusScroll, true)
-      }
+    document.addEventListener('focus', handleFocus, true)
+
+    return () => {
+      Element.prototype.scrollIntoView = originalScrollIntoView
+      document.removeEventListener('focus', handleFocus, true)
     }
   }, [])
 
