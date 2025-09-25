@@ -186,9 +186,16 @@ export default function LunchBoxLanding() {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
+  // Prevenir scroll no deseado al enfocar inputs en mobile
+  const handleInputFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    e.stopPropagation()
+    // No hacer ningún tipo de scroll - quedarse en la posición actual
+  }
+
   // Manejar envío del formulario
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    e.stopPropagation()
     setIsSubmitting(true)
     setSubmitMessage("")
 
@@ -1431,6 +1438,8 @@ export default function LunchBoxLanding() {
           className="py-24 md:py-32 relative"
           aria-labelledby="contact-heading"
           data-section="contact"
+          onClick={(e) => e.stopPropagation()}
+          onTouchStart={(e) => e.stopPropagation()}
         >
           <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
             <div
@@ -1448,7 +1457,12 @@ export default function LunchBoxLanding() {
               <div className="absolute -bottom-5 sm:-bottom-10 -right-5 sm:-right-10 w-20 sm:w-40 h-20 sm:h-40 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20 blur-3xl" />
 
               <div className="relative bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg">
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <form
+                  onSubmit={handleSubmit}
+                  onClick={(e) => e.stopPropagation()}
+                  onTouchStart={(e) => e.stopPropagation()}
+                  className="space-y-4 sm:space-y-6"
+                >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-white/80 mb-2">
@@ -1461,6 +1475,7 @@ export default function LunchBoxLanding() {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
+                        onFocus={handleInputFocus}
                         placeholder="Tu nombre"
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                       />
@@ -1480,6 +1495,7 @@ export default function LunchBoxLanding() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
+                        onFocus={handleInputFocus}
                         placeholder="correo@ejemplo.com"
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                       />
@@ -1501,6 +1517,7 @@ export default function LunchBoxLanding() {
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
+                        onFocus={handleInputFocus}
                         placeholder="55 1234 5678"
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                       />
@@ -1519,6 +1536,7 @@ export default function LunchBoxLanding() {
                         required
                         value={formData.service}
                         onChange={handleInputChange}
+                        onFocus={handleInputFocus}
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base h-[49.6px]"
                       >
                         <option value="">Selecciona una opción</option>
@@ -1543,6 +1561,7 @@ export default function LunchBoxLanding() {
                       required
                       value={formData.message}
                       onChange={handleInputChange}
+                      onFocus={handleInputFocus}
                       placeholder="Describe brevemente tu empresa y qué necesitas..."
                       className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none text-sm sm:text-base"
                     />
@@ -1552,6 +1571,14 @@ export default function LunchBoxLanding() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        // Asegurar que solo se ejecute el submit
+                      }}
+                      onTouchStart={(e) => {
+                        e.stopPropagation()
+                        // Prevenir propagación en touch events
+                      }}
                       className="flex-1 bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-white/90 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
                       {isSubmitting ? "Enviando..." : "Solicitar Cotización"}

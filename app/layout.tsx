@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   creator: 'HARDCODED Agency',
   publisher: 'HARDCODED Agency',
   robots: 'index, follow',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
