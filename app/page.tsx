@@ -44,8 +44,8 @@ function useScrollAnimation() {
         })
       },
       {
-        threshold: 0.15,
-        rootMargin: "25% 0px -25% 0px",
+        threshold: 0.01,
+        rootMargin: "100% 0px 0px 0px",
       },
     )
 
@@ -74,10 +74,6 @@ export default function LunchBoxLanding() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState<string>("")
 
-  // Debug log on component mount
-  useEffect(() => {
-    console.log("🎬 LunchBoxLanding component mounted - debugging mode activated")
-  }, [])
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -128,9 +124,7 @@ export default function LunchBoxLanding() {
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY
-          console.log("📜 Scroll event - Y position:", currentScrollY)
-          setScrollY(currentScrollY)
+          setScrollY(window.scrollY)
           ticking = false
         })
         ticking = true
@@ -148,17 +142,14 @@ export default function LunchBoxLanding() {
 
   // Función para scroll suave a secciones
   const scrollToSection = (sectionId: string) => {
-    console.log("📍 scrollToSection called with:", sectionId)
     const element = document.getElementById(sectionId)
     if (element) {
-      console.log("📍 Scrolling to section:", sectionId)
       element.scrollIntoView({ behavior: "smooth" })
     }
   }
 
   // Función que hace scroll al formulario de contacto y preselecciona el paquete
   const scrollToContactForm = (packageType?: string, e?: React.MouseEvent) => {
-    console.log("📧 scrollToContactForm called with:", { packageType, eventExists: !!e })
     // Prevenir cualquier comportamiento por defecto del navegador
     if (e) {
       e.preventDefault()
@@ -168,7 +159,6 @@ export default function LunchBoxLanding() {
     // Hacer scroll al formulario de contacto
     const element = document.getElementById('contact-form')
     if (element) {
-      console.log("📧 Scrolling to contact form")
       element.scrollIntoView({ behavior: 'smooth' })
     }
 
@@ -205,10 +195,8 @@ export default function LunchBoxLanding() {
 
   // Manejar envío del formulario
   const handleSubmit = async (e: React.FormEvent) => {
-    console.log("🚀 handleSubmit called", { eventType: e.type, target: e.target })
     e.preventDefault()
     e.stopPropagation()
-    console.log("🔒 preventDefault y stopPropagation ejecutados")
     setIsSubmitting(true)
     setSubmitMessage("")
 
@@ -486,18 +474,19 @@ export default function LunchBoxLanding() {
             <div className="mt-6 md:mt-8">
               <Button
                 variant="ghost"
-                className="text-sm md:text-base text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 hover:no-underline transition-all duration-300"
+                className="text-sm md:text-base text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white underline underline-offset-4 hover:no-underline transition-all duration-300 px-2 sm:px-4"
                 onClick={() => scrollToContactForm("asesoria")}
               >
-                ¿No estás seguro? Solicita asesoría gratuita
-                <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" />
+                <span className="sm:hidden">¿No estás seguro? Solicita asesoría</span>
+                <span className="hidden sm:inline">¿No estás seguro? Solicita asesoría gratuita</span>
+                <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
               </Button>
             </div>
           </div>
         </section>
 
         {/* Creative Showcase */}
-        <section className="py-24 md:py-32 relative" aria-labelledby="showcase-heading" data-section="showcase">
+        <section className="pt-8 md:pt-20 pb-2 md:pb-20 relative" aria-labelledby="showcase-heading" data-section="showcase">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
               {/* Left Column */}
@@ -597,7 +586,7 @@ export default function LunchBoxLanding() {
         {/* Pricing Section */}
         <section
           id="pricing"
-          className="py-24 md:py-32 relative"
+          className="pt-2 md:pt-20 pb-8 md:pb-20 relative"
           aria-labelledby="pricing-heading"
           data-section="pricing"
         >
@@ -848,7 +837,7 @@ export default function LunchBoxLanding() {
         </section>
 
         {/* Decision Helper Section */}
-        <section className="py-24 md:py-32 relative" data-section="decision">
+        <section className="py-8 md:py-20 relative" data-section="decision">
           <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16">
             <div className={`text-center mb-16 md:mb-20 animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`}>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
@@ -1068,17 +1057,18 @@ export default function LunchBoxLanding() {
               <Button
                 onClick={() => scrollToContactForm("asesoria")}
                 size="lg"
-                className="rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 text-white px-4 sm:px-8 py-4 text-sm sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                ¿Aún no estás seguro? Solicita asesoría
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="sm:hidden">¿No estás seguro? Solicita asesoría</span>
+                <span className="hidden sm:inline">¿Aún no estás seguro? Solicita asesoría</span>
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
               </Button>
             </div>
           </div>
         </section>
 
         {/* Features Section - Artistic Approach */}
-        <section className="py-24 md:py-32 relative" aria-labelledby="features-heading" data-section="features">
+        <section className="py-8 md:py-20 relative" aria-labelledby="features-heading" data-section="features">
           <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16">
             <div
               className={`mb-20 md:mb-28 max-w-3xl animate-fade-in-up ${visibleSections.has("features") ? "visible" : ""}`}
@@ -1259,7 +1249,7 @@ export default function LunchBoxLanding() {
         </section>
 
         {/* Process Section - How We Work */}
-        <section className="py-24 md:py-32 relative" aria-labelledby="process-heading" data-section="process">
+        <section className="py-8 md:py-20 relative" aria-labelledby="process-heading" data-section="process">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
             <div
               className={`text-center mb-16 md:mb-20 lg:mb-28 animate-fade-in-up ${visibleSections.has("process") ? "visible" : ""}`}
@@ -1399,7 +1389,7 @@ export default function LunchBoxLanding() {
 
         {/* Creative Call to Action */}
         <section
-          className="min-h-screen flex items-center justify-center relative py-32 md:py-48 lg:py-56"
+          className="min-h-screen flex items-center justify-center relative py-24 md:py-32 lg:py-40"
           aria-labelledby="cta-heading"
           data-section="cta"
         >
@@ -1448,17 +1438,11 @@ export default function LunchBoxLanding() {
         {/* Contact Form Section */}
         <section
           id="contact-form"
-          className="py-24 md:py-32 relative"
+          className="py-8 md:py-20 relative"
           aria-labelledby="contact-heading"
           data-section="contact"
-          onClick={(e) => {
-            console.log("🏗️ Section onClick triggered", { target: e.target, currentTarget: e.currentTarget })
-            e.stopPropagation()
-          }}
-          onTouchStart={(e) => {
-            console.log("🏗️ Section onTouchStart triggered", { target: e.target, currentTarget: e.currentTarget })
-            e.stopPropagation()
-          }}
+          onClick={(e) => e.stopPropagation()}
+          onTouchStart={(e) => e.stopPropagation()}
         >
           <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
             <div
@@ -1478,14 +1462,8 @@ export default function LunchBoxLanding() {
               <div className="relative bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg">
                 <form
                   onSubmit={handleSubmit}
-                  onClick={(e) => {
-                    console.log("📋 Form onClick triggered", { target: e.target, currentTarget: e.currentTarget })
-                    e.stopPropagation()
-                  }}
-                  onTouchStart={(e) => {
-                    console.log("📋 Form onTouchStart triggered", { target: e.target, currentTarget: e.currentTarget })
-                    e.stopPropagation()
-                  }}
+                  onClick={(e) => e.stopPropagation()}
+                  onTouchStart={(e) => e.stopPropagation()}
                   className="space-y-4 sm:space-y-6"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -1598,18 +1576,13 @@ export default function LunchBoxLanding() {
                       disabled={isSubmitting}
                       data-testid="submit-form-button"
                       onClick={(e) => {
-                        console.log("🎯 NATIVE Button onClick triggered", { eventType: e.type, target: e.target, currentTarget: e.currentTarget })
                         e.preventDefault()
                         e.stopPropagation()
-                        console.log("🔒 onClick preventDefault y stopPropagation ejecutados")
-                        // Enviar formulario manualmente
                         handleSubmit(e)
                       }}
                       onTouchStart={(e) => {
-                        console.log("🎯 NATIVE Button onTouchStart triggered", { eventType: e.type, target: e.target, currentTarget: e.currentTarget })
                         e.preventDefault()
                         e.stopPropagation()
-                        console.log("🔒 onTouchStart preventDefault y stopPropagation ejecutados")
                       }}
                       className="flex-1 bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-white/90 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                       style={{ touchAction: 'none' }}
