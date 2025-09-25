@@ -147,7 +147,7 @@ export default function LunchBoxLanding() {
     }
   }
 
-  // Función que NO hace scroll - solo preselecciona si hay packageType
+  // Función que hace scroll al formulario de contacto y preselecciona el paquete
   const scrollToContactForm = (packageType?: string, e?: React.MouseEvent) => {
     // Prevenir cualquier comportamiento por defecto del navegador
     if (e) {
@@ -155,9 +155,28 @@ export default function LunchBoxLanding() {
       e.stopPropagation()
     }
 
-    // Solo preseleccionar - NO hacer scroll
+    // Hacer scroll al formulario de contacto
+    const element = document.getElementById('contact-form')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    // Preseleccionar el tipo de servicio si se proporciona
     if (packageType) {
-      setFormData(prev => ({ ...prev, service: packageType }))
+      // Usar setTimeout para asegurar que el DOM se haya actualizado
+      setTimeout(() => {
+        let serviceValue = ''
+        if (packageType === 'asesoria') {
+          serviceValue = 'No estoy seguro, necesito asesoría'
+        } else if (packageType === 'empresarial') {
+          serviceValue = 'Presencia Digital Profesional ($6,000)'
+        } else if (packageType === 'ecommerce') {
+          serviceValue = 'Tienda Online Ilimitada ($11,000)'
+        } else {
+          serviceValue = packageType
+        }
+        setFormData(prev => ({ ...prev, service: serviceValue }))
+      }, 100)
     }
   }
 
@@ -1031,7 +1050,7 @@ export default function LunchBoxLanding() {
                 size="lg"
                 className="rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 hover:from-purple-700 hover:via-pink-700 hover:to-cyan-700 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                ¿Aún no estás seguro? Solicita asesoría personalizada
+                ¿Aún no estás seguro? Solicita asesoría
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -1397,10 +1416,7 @@ export default function LunchBoxLanding() {
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 dark:from-purple-500 dark:via-pink-500 dark:to-cyan-500 p-[1px] rounded-full group hover:scale-105 transition-all duration-300 hover:shadow-xl">
               <Button
                 className="rounded-full bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-black/90 px-8 md:px-12 py-6 md:py-8 text-lg md:text-2xl group"
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleSubmit(e as any)
-                }}
+                onClick={() => scrollToContactForm()}
               >
                 Solicitar Cotización
                 <ArrowRight className="ml-2 md:ml-3 h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform duration-300" />
@@ -1506,9 +1522,9 @@ export default function LunchBoxLanding() {
                         className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg sm:rounded-xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base h-[49.6px]"
                       >
                         <option value="">Selecciona una opción</option>
-                        <option value="empresarial">Presencia Digital Profesional ($6,000)</option>
-                        <option value="ecommerce">Tienda Online Ilimitada ($11,000)</option>
-                        <option value="asesoria">No estoy seguro, necesito asesoría</option>
+                        <option value="Presencia Digital Profesional ($6,000)">Presencia Digital Profesional ($6,000)</option>
+                        <option value="Tienda Online Ilimitada ($11,000)">Tienda Online Ilimitada ($11,000)</option>
+                        <option value="No estoy seguro, necesito asesoría">No estoy seguro, necesito asesoría</option>
                       </select>
                     </div>
                   </div>
