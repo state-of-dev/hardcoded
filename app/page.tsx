@@ -486,7 +486,7 @@ export default function LunchBoxLanding() {
         </section>
 
         {/* Creative Showcase */}
-        <section className="pt-8 md:pt-20 pb-2 md:pb-20 relative" aria-labelledby="showcase-heading" data-section="showcase">
+        <section className="pt-4 md:pt-20 pb-1 md:pb-20 relative" aria-labelledby="showcase-heading" data-section="showcase">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
               {/* Left Column */}
@@ -586,7 +586,7 @@ export default function LunchBoxLanding() {
         {/* Pricing Section */}
         <section
           id="pricing"
-          className="pt-2 md:pt-20 pb-8 md:pb-20 relative"
+          className="pt-1 md:pt-20 pb-4 md:pb-20 relative"
           aria-labelledby="pricing-heading"
           data-section="pricing"
         >
@@ -837,7 +837,7 @@ export default function LunchBoxLanding() {
         </section>
 
         {/* Decision Helper Section */}
-        <section className="py-8 md:py-20 relative" data-section="decision">
+        <section className="py-4 md:py-20 relative" data-section="decision">
           <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16">
             <div className={`text-center mb-16 md:mb-20 animate-fade-in-up ${visibleSections.has("decision") ? "visible" : ""}`}>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
@@ -1068,7 +1068,7 @@ export default function LunchBoxLanding() {
         </section>
 
         {/* Features Section - Artistic Approach */}
-        <section className="py-8 md:py-20 relative" aria-labelledby="features-heading" data-section="features">
+        <section className="py-4 md:py-20 relative" aria-labelledby="features-heading" data-section="features">
           <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16">
             <div
               className={`mb-20 md:mb-28 max-w-3xl animate-fade-in-up ${visibleSections.has("features") ? "visible" : ""}`}
@@ -1249,7 +1249,7 @@ export default function LunchBoxLanding() {
         </section>
 
         {/* Process Section - How We Work */}
-        <section className="py-8 md:py-20 relative" aria-labelledby="process-heading" data-section="process">
+        <section className="py-4 md:py-20 relative" aria-labelledby="process-heading" data-section="process">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
             <div
               className={`text-center mb-16 md:mb-20 lg:mb-28 animate-fade-in-up ${visibleSections.has("process") ? "visible" : ""}`}
@@ -1438,7 +1438,7 @@ export default function LunchBoxLanding() {
         {/* Contact Form Section */}
         <section
           id="contact-form"
-          className="py-8 md:py-20 relative"
+          className="py-4 md:py-20 relative"
           aria-labelledby="contact-heading"
           data-section="contact"
           onClick={(e) => e.stopPropagation()}
