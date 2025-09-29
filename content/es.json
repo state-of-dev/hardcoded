@@ -1,0 +1,152 @@
+{
+  "nav": {
+    "packages": "Paquetes",
+    "contact": "Contactar"
+  },
+  "hero": {
+    "badge": "Sitio Web + Tienda Online",
+    "title": "hardcoded.space",
+    "subtitle_line1": "¿Apareces cuando te buscan?",
+    "subtitle_line2": "Presencia Digital Profesional",
+    "subtitle_line3": "y",
+    "subtitle_line4": "Tienda Online Ilimitada",
+    "button_digital_presence": "Ver Presencia Digital Profesional",
+    "button_ecommerce": "Ver Tienda Online Ilimitada",
+    "button_advice_short": "¿No estás seguro? Solicita asesoría",
+    "button_advice_long": "¿No estás seguro? Solicita asesoría gratuita"
+  },
+  "showcase": {
+    "title": "Expertos en Desarrollo de Software",
+    "description_line1": "Dos soluciones poderosas:",
+    "description_line2": "Presencia Digital Profesional",
+    "description_line3": "para empresas de servicios y",
+    "description_line4": "Tienda Online Ilimitada",
+    "description_line5": "para venta de productos.",
+    "pricing_recap": "$6,000 sitio web • $11,000 e-commerce",
+    "bento_item_business": "Empresarial",
+    "bento_item_ecommerce": "E-commerce",
+    "bento_item_services": "Servicios",
+    "bento_item_contact": "Contacto",
+    "bento_item_portfolio": "Portafolio",
+    "bento_item_sales": "Ventas"
+  },
+  "pricing": {
+    "title": "Nuestras Soluciones",
+    "subtitle": "Tu negocio online funcionando automáticamente. Descubre qué solución se adapta mejor a tu proyecto.",
+    "package_business": {
+      "badge": "POPULAR",
+      "title": "Presencia Digital Profesional",
+      "price": "$6,000",
+      "currency": "MXN",
+      "description": "Perfecto para empresas de servicios, consultorios, restaurantes y negocios que necesitan presencia digital profesional.",
+      "features": [
+        "Página de inicio",
+        "Sección \"Acerca de nosotros\"",
+        "Catálogo de servicios",
+        "Formularios de contacto",
+        "Mapa de ubicación",
+        "Galería multimedia",
+        "Enlaces a Teléfono, Correo y Redes Sociales."
+      ],
+      "button": "Solicitar"
+    },
+    "package_ecommerce": {
+      "badge": "COMPLETO",
+      "title": "Tienda Online Ilimitada",
+      "price": "$11,000",
+      "currency": "MXN",
+      "description": "Ideal para tiendas, boutiques, distribuidoras y negocios que quieren vender productos online con sistema automático.",
+      "includes_plus": "Todo lo del paquete anterior MÁS:",
+      "features": [
+        "Catálogo de productos ilimitado",
+        "Notificaciones de envío",
+        "Sistema de gestión de inventario",
+        "Múltiples métodos de pago",
+        "Autenticación de usuarios/clientes",
+        "Dashboard de administración"
+      ],
+      "button": "Solicitar"
+    }
+  },
+  "decision": {
+    "title": "Te ayudamos a decidir",
+    "subtitle": "3 preguntas simples para saber exactamente qué necesita tu negocio",
+    "q1_title": "¿Qué vendes?",
+    "q1_option1_title": "SERVICIOS",
+    "q1_option1_desc": "Consultas, reparaciones, asesorías",
+    "q1_option2_title": "PRODUCTOS",
+    "q1_option2_desc": "Cosas que se compran y llevan",
+    "q2_title": "¿Cómo te pagan?",
+    "q2_option1_title": "EN PERSONA",
+    "q2_option1_desc": "Efectivo o transferencia",
+    "q2_option2_title": "ONLINE",
+    "q2_option2_desc": "Tarjeta, PayPal, apps",
+    "q3_title": "¿Mostrar precios?",
+    "q3_option1_title": "PREFIERO QUE ME CONTACTEN",
+    "q3_option1_desc": "Para dar cotización personalizada",
+    "q3_option2_title": "SÍ, PRECIOS FIJOS",
+    "q3_option2_desc": "Que compren sin hablarme",
+    "cta_button_short": "¿No estás seguro? Solicita asesoría",
+    "cta_button_long": "¿Aún no estás seguro? Solicita asesoría"
+  },
+  "features": {
+    "title_part1": "Funcionalidades",
+    "title_part2": "incluidas",
+    "subtitle": "Todo lo que tu sitio web necesita para funcionar correctamente y generar resultados desde el primer día.",
+    "feature1_title": "Presencia Digital Profesional Completa",
+    "feature1_desc": "Mapa de ubicación, galería multimedia, formularios de contacto y todas las secciones necesarias. Clientes pueden conocer todos los detalles de tus servicios antes de contactarte.",
+    "feature2_title": "Tienda Online Ilimitada",
+    "feature2_desc": "Notificaciones de envío, pagos seguros, control de inventario y panel administrativo. Clientes pueden revisar el estado de sus compras en tu página y guardar sus favoritos en su cuenta.",
+    "feature2_button": "Ver Tienda Online Ilimitada - $11,000",
+    "feature2_instant_deploy": "Instant Deploy"
+  },
+  "process": {
+    "badge": "Nuestro Proceso",
+    "title_part1": "Proceso",
+    "title_part2": "Simplificado",
+    "subtitle": "Desde la primera conversación hasta el lanzamiento, te acompañamos en cada paso para crear tu presencia digital perfecta.",
+    "step1_title": "Primera Revisión",
+    "step1_desc": "Conversamos sobre tu proyecto y definimos los objetivos de tu sitio web.",
+    "step2_title": "Diseño y Desarrollo",
+    "step2_desc": "Creamos tu sitio web con diseño personalizado y todas las funcionalidades que necesitas.",
+    "step3_title": "Lanzamiento",
+    "step3_desc": "Coordinamos detalles y publicamos tu sitio web."
+  },
+  "cta": {
+    "title_part1": "¿Listo para",
+    "title_part2": "crecer",
+    "title_part3": "?",
+    "subtitle": "¿Te gustan los estilos visuales de esta web?",
+    "button": "Solicitar Cotización"
+  },
+  "contactForm": {
+    "subtitle": "Cuéntanos sobre tu proyecto y te enviaremos una propuesta.",
+    "label_name": "Nombre completo *",
+    "placeholder_name": "Tu nombre",
+    "label_email": "Email *",
+    "placeholder_email": "correo@ejemplo.com",
+    "label_phone": "Teléfono *",
+    "placeholder_phone": "55 1234 5678",
+    "label_project_type": "Tipo de proyecto *",
+    "option_select": "Selecciona una opción",
+    "option_business": "Presencia Digital Profesional ($6,000)",
+    "option_ecommerce": "Tienda Online Ilimitada ($11,000)",
+    "option_advice": "No estoy seguro, necesito asesoría",
+    "label_message": "Cuéntanos sobre tu negocio *",
+    "placeholder_message": "Describe brevemente tu empresa y qué necesitas...",
+    "button_submit": "Solicitar Cotización",
+    "button_submitting": "Enviando...",
+    "footer_brand": "hardcoded.space",
+    "success_message": "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.",
+    "error_message_default": "Error al enviar el mensaje",
+    "error_message_retry": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+  },
+  "floatingBadge": {
+    "title": "Nuestros Productos",
+    "product1_name": "Presencia Digital Profesional",
+    "product1_price": "$6,000",
+    "product2_name": "Tienda Online Ilimitada",
+    "product2_price": "$11,000",
+    "button": "Cotizar Ahora"
+  }
+}
